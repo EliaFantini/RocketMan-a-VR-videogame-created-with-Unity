@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
-
 	// Store the hand type to know which button should be pressed
 	public enum HandType : int { LeftHand, RightHand };
 	[Header("Hand Properties")]
