@@ -41,4 +41,6 @@ public class ObjectAnchor : MonoBehaviour
 	public bool is_available() { return hand_controller == null; }
 
 	public float get_grasping_radius() { return graspingRadius; }
+
+	public virtual bool can_be_grasped_by ( MainPlayerController player ) { return player.is_equiped_with( typeof( BasicGraspUpgrade ) ); }
 }

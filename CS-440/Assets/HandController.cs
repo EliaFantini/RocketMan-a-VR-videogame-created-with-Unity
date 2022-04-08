@@ -48,6 +48,16 @@ public class HandController : MonoBehaviour
 	// Automatically called at each frame
 	void Update() { handle_controller_behavior(); }
 
+	void OnTriggerEnter ( Collider other ) {
+		Debug.Log("something");
+		// Retreive the object to be collected if it exits
+		/*InteractiveItem interactive_item = other.GetComponent<InteractiveItem>();
+		if ( interactive_item == null ) return;
+
+		// Forward the current player to the object to be collected
+		interactive_item.interacted_with( this );*/
+
+	}
 
 	// Store the previous state of triggers to detect edges
 	protected bool is_hand_closed_previous_frame = false;
@@ -84,19 +94,25 @@ public class HandController : MonoBehaviour
 			float oject_distance;
 
 			// Iterate over objects to determine if we can interact with it
-			for (int i = 0; i < anchors_in_the_scene.Length; i++)
-			{
+			for ( int i = 0; i < anchors_in_the_scene.Length; i++ ) {
 
 				// Skip object not available
-				if (!anchors_in_the_scene[i].is_available()) continue;
+				if ( !anchors_in_the_scene[i].is_available() ) continue;
+
+
+
+					// ####################################### New check perfomed here ! #######################################
+					// Skip object requiring special upgrades
+					//if ( !anchors_in_the_scene[i].can_be_grasped_by( playerController ) ) continue;
+
+
 
 				// Compute the distance to the object
-				oject_distance = Vector3.Distance(this.transform.position, anchors_in_the_scene[i].transform.position);
+				oject_distance = Vector3.Distance( this.transform.position, anchors_in_the_scene[i].transform.position );
 
 				// Keep in memory the closest object
 				// N.B. We can extend this selection using priorities
-				if (oject_distance < best_object_distance && oject_distance <= anchors_in_the_scene[i].get_grasping_radius())
-				{
+				if ( oject_distance < best_object_distance && oject_distance <= anchors_in_the_scene[i].get_grasping_radius() ) {
 					best_object_id = i;
 					best_object_distance = oject_distance;
 				}

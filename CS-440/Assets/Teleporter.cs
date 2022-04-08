@@ -12,7 +12,7 @@ public class Teleporter : MonoBehaviour
 
     public LayerMask excludeLayers; // excluding for performance
 
-    public float angle = 45f; // Arc take off angle
+    public float angle = 0f; // Arc take off angle
 
     public float strength = 10f; // Increasing this value will increase overall arc length
 
