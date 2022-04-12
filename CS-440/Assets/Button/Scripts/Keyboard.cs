@@ -5,16 +5,14 @@ using TMPro;
 public class Keyboard : MonoBehaviour
 {
     public TMP_InputField inputField;
-    public GameObject normalButtons;
-    public GameObject capsButtons;
-    private bool caps;
-    void Start()
-    {
-        caps = false;
-    }
+
+    public CapsuleDoor capsuleDoor;
 
     public void InsertChar(string c) {
         inputField.text += c;
+        if(inputField.text.Equals("1111")){
+            capsuleDoor.open();
+        }
     }
     public void DeleteChar() {
         if(inputField.text.Length > 0) {
@@ -24,15 +22,5 @@ public class Keyboard : MonoBehaviour
     public void InsertSpace() {
         inputField.text += " ";
     }
-    public void CapsPressed() {
-        if(!caps) {
-            normalButtons.SetActive(true);
-            capsButtons.SetActive(false);
-            caps = true;
-        } else {
-            capsButtons.SetActive(false);
-            normalButtons.SetActive(true);
-            caps = false;
-        }
-    }
+
 }
