@@ -8,6 +8,8 @@ public class screwDriving : MonoBehaviour
     private int time = 0;
     private Rigidbody rb;
     private bool onscrew = false;
+    [SerializeField]
+    public GameObject Drill;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,27 +17,29 @@ public class screwDriving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            descrewing = true;
-        }
-        if(descrewing)
-        {
-            transform.Rotate(0,0,15,Space.Self);
-            if(onscrew){
-                rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
-                rb.transform.Rotate(0,0,-15,Space.Self);
-            }
-            time += 1;
-            if(time > 120)
+        if(Drill.GetComponent<OVRGrabbable>().isGrabbed){
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f)
             {
+                descrewing = true;
+            }
+            if(descrewing)
+            {
+                transform.Rotate(0,0,15,Space.Self);
                 if(onscrew){
-                    rb.isKinematic = false;
-                    rb.AddForce(1, 1, 0);
-                    onscrew = false;
+                    rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
+                    rb.transform.Rotate(0,0,-15,Space.Self);
                 }
-                descrewing = false;
-                time = 0;
+                time += 1;
+                if(time > 120)
+                {
+                    if(onscrew){
+                        rb.isKinematic = false;
+                        rb.AddForce(1, 1, 0);
+                        onscrew = false;
+                    }
+                    descrewing = false;
+                    time = 0;
+                }
             }
         }
     }
