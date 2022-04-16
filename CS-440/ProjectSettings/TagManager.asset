@@ -6,6 +6,7 @@ TagManager:
   tags:
   - screwDriver
   - screw
+  - ClimbPoint
   layers:
   - Default
   - TransparentFX
