@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class screwDriving : MonoBehaviour
 {
-    private bool descrewing = false;
-    private int time = 0;
+    private int timeDrill = 1000;
+    private int timeScrew = 0;
     private Rigidbody rb;
     private bool onscrew = false;
+    private bool trigger = false;
     [SerializeField]
     public GameObject Drill;
     // Start is called before the first frame update
@@ -18,29 +19,32 @@ public class screwDriving : MonoBehaviour
     void Update()
     {
         if(Drill.GetComponent<OVRGrabbable>().isGrabbed){
-            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f)
-            {
-                descrewing = true;
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f){
+                trigger = true;
+                timeDrill = 0;
             }
-            if(descrewing)
-            {
-                transform.Rotate(0,0,15,Space.Self);
-                if(onscrew){
-                    rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
-                    rb.transform.Rotate(0,0,-15,Space.Self);
-                }
-                time += 1;
-                if(time > 120)
-                {
-                    if(onscrew){
-                        rb.isKinematic = false;
-                        rb.AddForce(1, 1, 0);
-                        onscrew = false;
-                    }
-                    descrewing = false;
-                    time = 0;
-                }
+        }
+        else
+            trigger = false;
+
+        if(trigger || timeDrill < 120){
+            transform.Rotate(0,0,15,Space.Self);
+            if(onscrew){
+                rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
+                rb.transform.Rotate(0,0,-15,Space.Self);
+                timeScrew +=1;
             }
+            timeDrill += 1;
+        }
+
+        if(timeScrew >= 120)
+        {
+            if(onscrew){
+                rb.isKinematic = false;
+                rb.AddForce(1, 1, 0);
+                onscrew = false;
+            }
+            timeScrew = 0;
         }
     }
     private void OnTriggerEnter(Collider other)
