@@ -26,9 +26,9 @@ public class Climber : MonoBehaviour
            movement += currentHand.Delta * sensitivity; //this should work for y axis... why cant i move up ?? 
        } 
        if(movement == Vector3.zero) {
-           //movement.y -= gravity * Time.deltaTime;  Gravity already implemented in OVRPlayerController
+           movement.y -= gravity * Time.deltaTime;  //Gravity already implemented in OVRPlayerController
        }
-       movement.y = 0.1f;
+
        controller.Move(movement * Time.deltaTime);
     }
 

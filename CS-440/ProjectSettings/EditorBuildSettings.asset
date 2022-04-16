@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Button.unity
     guid: f15d7bf4aa63f8745ac3a6f95623b6eb
   - enabled: 0
-    path: Assets/Scenes/Rocket.unity
+    path: Assets/Scenes/RocketElia.unity
     guid: 6eb1daba61875ca4fb7aa2eefe7eff94
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Room2AnimatedDoor.unity
     guid: a7b7a0bbbbcf4d04cacc30590863c67d
+  - enabled: 1
+    path: Assets/Scenes/Climbing.unity
+    guid: 24737dd3b173955438ed28bbe57f4ca5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ef7497bde076bfa4db2647fa75f831dd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e38bf2dfff44e1342bba64f7fa54df97, type: 2}
