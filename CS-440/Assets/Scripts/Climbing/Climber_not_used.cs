@@ -26,9 +26,14 @@ public class Climber : MonoBehaviour
            movement += currentHand.Delta * sensitivity; //this should work for y axis... why cant i move up ?? 
        } 
        if(movement == Vector3.zero) {
-           movement.y -= gravity * Time.deltaTime;  //Gravity already implemented in OVRPlayerController
+           //movement.y -= gravity * Time.deltaTime;  //Gravity already implemented in OVRPlayerController
        }
 
+       //movement.y += 10f; If you uncomment this you will see that the player "shoots up and down" so basically
+       //we can move the player up from here but somewhere else in the code he is pulled back down.
+       //mmh maybe add a collision around the stairs, so when im close to stairs update like this....
+       //kinda stupid to have OVRPlayercontroller anyway... cuz we dont move any other way..
+       //maybe just add teleport to the camera rig
        controller.Move(movement * Time.deltaTime);
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-  public Climber climber = null;
+  public OVRPlayerController climber = null;
   public OVRInput.Controller controller = OVRInput.Controller.None;
 
   public Vector3 Delta {private set; get; } = Vector3.zero;
