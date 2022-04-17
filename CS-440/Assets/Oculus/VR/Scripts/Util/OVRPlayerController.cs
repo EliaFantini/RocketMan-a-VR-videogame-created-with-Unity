@@ -256,61 +256,63 @@ public class OVRPlayerController : MonoBehaviour
 		Vector3 movement = Vector3.zero;
 
 		//if a hand is grabbing something, disable other movement calculations and move according to hand
+	
+		if (useProfileData)
+		{
+			if (InitialPose == null)
+			{
+				// Save the initial pose so it can be recovered if useProfileData
+				// is turned off later.
+				InitialPose = new OVRPose()
+				{
+					position = CameraRig.transform.localPosition,
+					orientation = CameraRig.transform.localRotation
+				};
+			}
+
+			var p = CameraRig.transform.localPosition;
+			if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
+			{
+				p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
+			}
+			else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
+			{
+				p.y = -(0.5f * Controller.height) + Controller.center.y;
+			}
+			CameraRig.transform.localPosition = p;
+		}
+		else if (InitialPose != null)
+		{
+			// Return to the initial pose if useProfileData was turned off at runtime
+			CameraRig.transform.localPosition = InitialPose.Value.position;
+			CameraRig.transform.localRotation = InitialPose.Value.orientation;
+			InitialPose = null;
+		}
+
+		CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
+
+		if (CameraUpdated != null)
+		{
+			CameraUpdated();
+		}
+		
+		UpdateMovement();
+
+		Vector3 moveDirection = Vector3.zero;
+
+		float motorDamp = (1.0f + (Damping * SimulationRate * Time.deltaTime));
+
+		MoveThrottle.x /= motorDamp;
+		MoveThrottle.y = (MoveThrottle.y > 0.0f) ? (MoveThrottle.y / motorDamp) : MoveThrottle.y;
+		MoveThrottle.z /= motorDamp;
+
+		moveDirection += MoveThrottle * SimulationRate * Time.deltaTime;
+
+		//if holding on to climbpoint disable gravity
 		if(currentHand) {
-			movement += currentHand.Delta * sensitivity; //this should work for y axis... why cant i move up ?? 
-			Controller.Move(movement * Time.deltaTime);
+		movement += currentHand.Delta * sensitivity; 
+		Controller.Move(movement * Time.deltaTime);
 		} else {
-			if (useProfileData)
-			{
-				if (InitialPose == null)
-				{
-					// Save the initial pose so it can be recovered if useProfileData
-					// is turned off later.
-					InitialPose = new OVRPose()
-					{
-						position = CameraRig.transform.localPosition,
-						orientation = CameraRig.transform.localRotation
-					};
-				}
-
-				var p = CameraRig.transform.localPosition;
-				if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
-				{
-					p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
-				}
-				else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
-				{
-					p.y = -(0.5f * Controller.height) + Controller.center.y;
-				}
-				CameraRig.transform.localPosition = p;
-			}
-			else if (InitialPose != null)
-			{
-				// Return to the initial pose if useProfileData was turned off at runtime
-				CameraRig.transform.localPosition = InitialPose.Value.position;
-				CameraRig.transform.localRotation = InitialPose.Value.orientation;
-				InitialPose = null;
-			}
-
-			CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
-
-			if (CameraUpdated != null)
-			{
-				CameraUpdated();
-			}
-			
-			UpdateMovement();
-
-			Vector3 moveDirection = Vector3.zero;
-
-			float motorDamp = (1.0f + (Damping * SimulationRate * Time.deltaTime));
-
-			MoveThrottle.x /= motorDamp;
-			MoveThrottle.y = (MoveThrottle.y > 0.0f) ? (MoveThrottle.y / motorDamp) : MoveThrottle.y;
-			MoveThrottle.z /= motorDamp;
-
-			moveDirection += MoveThrottle * SimulationRate * Time.deltaTime;
-
 			// Gravity
 			if (Controller.isGrounded && FallSpeed <= 0)
 				FallSpeed = ((Physics.gravity.y * (GravityModifier * 0.002f)));
@@ -318,30 +320,31 @@ public class OVRPlayerController : MonoBehaviour
 				FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
 
 			moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
-
-
-			if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
-			{
-				// Offset correction for uneven ground
-				float bumpUpOffset = Mathf.Max(Controller.stepOffset, new Vector3(moveDirection.x, 0, moveDirection.z).magnitude);
-				moveDirection -= bumpUpOffset * Vector3.up;
-			}
-
-			if (PreCharacterMove != null)
-			{
-				PreCharacterMove();
-				Teleported = false;
-			}
-
-			Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
-
-			// Move contoller
-			Controller.Move(moveDirection);
-			Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
-
-			if (predictedXZ != actualXZ)
-				MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 		}
+
+
+		if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
+		{
+			// Offset correction for uneven ground
+			float bumpUpOffset = Mathf.Max(Controller.stepOffset, new Vector3(moveDirection.x, 0, moveDirection.z).magnitude);
+			moveDirection -= bumpUpOffset * Vector3.up;
+		}
+
+		if (PreCharacterMove != null)
+		{
+			PreCharacterMove();
+			Teleported = false;
+		}
+
+		Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
+
+		// Move contoller
+		Controller.Move(moveDirection);
+		Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
+
+		if (predictedXZ != actualXZ)
+			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
+		
 	}
 
 
