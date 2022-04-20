@@ -21,6 +21,6 @@ public class PlateRemoval : MonoBehaviour
         && screw2.GetComponent<Rigidbody>().isKinematic == false
         && screw3.GetComponent<Rigidbody>().isKinematic == false
         && screw4.GetComponent<Rigidbody>().isKinematic == false)
-        GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Animator>().SetBool("button_pressed", true);
     }
 }
