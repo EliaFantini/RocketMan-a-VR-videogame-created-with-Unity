@@ -7,6 +7,8 @@ TagManager:
   - screwDriver
   - screw
   - ClimbPoint
+  - Plug
+  - PowerSocket
   layers:
   - Default
   - TransparentFX
