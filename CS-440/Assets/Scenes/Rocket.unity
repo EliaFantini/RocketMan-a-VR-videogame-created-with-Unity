@@ -1071,6 +1071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 0}
   button: {fileID: 178960388}
+  buttonLamp: {fileID: 0}
+  isPressed: 0
+  enabled: 0
+  lamp: {fileID: 0}
 --- !u!82 &178960395
 AudioSource:
   m_ObjectHideFlags: 0

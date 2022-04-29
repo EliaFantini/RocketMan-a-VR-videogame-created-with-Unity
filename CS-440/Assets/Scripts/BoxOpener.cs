@@ -21,15 +21,15 @@ public class BoxOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(animator.enabled && (Time.frameCount - startTime) > 20)
-            animator.enabled = false;
+        if(animator.enabled && (Time.frameCount - startTime) > 400){
+          animator.enabled = false;
+        }
         if(box.GetComponent<Rigidbody>().velocity.magnitude > breakingLimit)
             breakBox = true;
     }
     private void OnTriggerEnter(Collider other)
     {
         if(breakBox){
-            
             animator.enabled = true;
             startTime = Time.frameCount;
         }
