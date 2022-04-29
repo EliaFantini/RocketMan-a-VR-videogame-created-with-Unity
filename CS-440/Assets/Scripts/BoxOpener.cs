@@ -10,6 +10,7 @@ public class BoxOpener : MonoBehaviour
     private bool breakBox;
     [SerializeField]
     public float breakingLimit;
+    public Collider boxTop;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class BoxOpener : MonoBehaviour
         if(breakBox){
             animator.enabled = true;
             startTime = Time.frameCount;
+            boxTop.enabled = false;
         }
     }
 }
