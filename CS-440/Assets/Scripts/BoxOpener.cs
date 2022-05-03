@@ -22,7 +22,7 @@ public class BoxOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(animator.enabled && (Time.frameCount - startTime) > 400){
+        if(breakBox && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f){
           animator.enabled = false;
         }
         if(box.GetComponent<Rigidbody>().velocity.magnitude > breakingLimit)
@@ -32,7 +32,6 @@ public class BoxOpener : MonoBehaviour
     {
         if(breakBox){
             animator.enabled = true;
-            startTime = Time.frameCount;
             boxTop.enabled = false;
         }
     }
