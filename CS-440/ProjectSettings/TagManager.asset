@@ -9,6 +9,7 @@ TagManager:
   - ClimbPoint
   - Plug
   - PowerSocket
+  - hammer
   layers:
   - Default
   - TransparentFX
