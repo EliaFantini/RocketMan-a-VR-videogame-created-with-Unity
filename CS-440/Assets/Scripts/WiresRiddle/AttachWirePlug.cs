@@ -11,12 +11,14 @@ public class AttachWirePlug : MonoBehaviour
     public Quaternion pluggedRotation;
     GameObject plug;
     AudioSource sound;
-    bool isPlugged;
+    public bool isPlugged;
+    public bool ciao;
     // Start is called before the first frame update
     void Start()
     {
         sound = GetComponent<AudioSource>();
         isPlugged = false;
+        ciao = false;
     }
 
 
@@ -24,7 +26,6 @@ public class AttachWirePlug : MonoBehaviour
 
         if(!isPlugged && (other.gameObject.tag == "Plug" || gameObject.tag == "PowerSocket")) {
             isPlugged = true;
-            other.GetComponent<Rigidbody>().isKinematic = true;
             other.GetComponent<Rigidbody>().useGravity = false;
             other.transform.position = pluggedPosition;
             other.transform.rotation = pluggedRotation;
@@ -51,7 +52,7 @@ public class AttachWirePlug : MonoBehaviour
         {
             plug = null;
             isPlugged = false;
-            other.GetComponent<Rigidbody>().isKinematic = false;
+            ciao = true;
             other.GetComponent<Rigidbody>().useGravity = true;
             sound.Play();
             if (gameObject.tag == "PowerSocket")

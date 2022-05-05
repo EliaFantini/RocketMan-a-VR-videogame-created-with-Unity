@@ -19,11 +19,13 @@ public class Locomotion : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
+            //teleporter.updateOVRPlayerPos();
             teleporter.ToggleDisplay(true);
         }
 
         if (OVRInput.GetUp(OVRInput.RawButton.RThumbstickUp))
         {
+            
             teleporter.Teleport();
             teleporter.ToggleDisplay(false);
         }

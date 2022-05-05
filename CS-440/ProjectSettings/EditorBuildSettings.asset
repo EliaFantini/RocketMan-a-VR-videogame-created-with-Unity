@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Button.unity
     guid: f15d7bf4aa63f8745ac3a6f95623b6eb
   - enabled: 1
-    path: Assets/Scenes/RocketElia.unity
+    path: Assets/Scenes/RocketEliaCopy.unity
     guid: 6eb1daba61875ca4fb7aa2eefe7eff94
   - enabled: 0
     path: Assets/Scenes/Room2AnimatedDoor.unity

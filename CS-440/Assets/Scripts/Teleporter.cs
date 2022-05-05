@@ -9,6 +9,7 @@ public class Teleporter : MonoBehaviour
 
     //public Transform bodyTransforn; // target transferred by teleport 
     public GameObject player;
+    public GameObject eyeAnchor;
 
     public LayerMask excludeLayers; // excluding for performance
 
@@ -34,6 +35,14 @@ public class Teleporter : MonoBehaviour
     private List<Vector3> vertexList = new List<Vector3>(); // vertex on arc
 
     private bool displayActive = false; // don't update path when it's false.
+    private Quaternion fixedRotation;
+
+    public void updateOVRPlayerPos()
+    {
+        player.GetComponent<CharacterController>().Move(eyeAnchor.transform.position - player.GetComponent<Transform>().position);
+        eyeAnchor.transform.localPosition = new Vector3(0.0f, eyeAnchor.transform.localPosition.y, 0.0f);
+        
+    }
 
 
     // Teleport target transform to ground position
@@ -41,8 +50,12 @@ public class Teleporter : MonoBehaviour
     {
         if (groundDetected)
         {
-            //bodyTransforn.position = groundPos + lastNormal * 0.1f;
+            fixedRotation = eyeAnchor.transform.rotation;
+            
             player.GetComponent<CharacterController>().Move(positionMarker.transform.position - player.GetComponent<Transform>().position);
+            OVRManager.display.RecenterPose();
+            eyeAnchor.transform.rotation = fixedRotation;
+            
         }
         else
         {
