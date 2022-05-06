@@ -10,6 +10,7 @@ TagManager:
   - Plug
   - PowerSocket
   - hammer
+  - buttonPresser
   layers:
   - Default
   - TransparentFX

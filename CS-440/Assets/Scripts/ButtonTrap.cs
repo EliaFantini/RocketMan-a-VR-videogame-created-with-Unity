@@ -13,9 +13,9 @@ public enum eColor
 
 public class ButtonTrap : MonoBehaviour
 {
- 
-
     [SerializeField]
+    public Vector3 pressedPos;
+    public Vector3 unpressedPos;
     public GameObject Door;
     public GameObject button;
     public ButtonLamp buttonLamp;
@@ -38,33 +38,35 @@ public class ButtonTrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(!isPressed) {
-            button.transform.position = button.transform.position + new Vector3(0, -0.02f, 0);
-            other.transform.position = other.transform.position + new Vector3(0, -0.02f, 0);
+            
+            //button.transform.position = pressedPos;
+            StartCoroutine(MoveOverSpeed(button, pressedPos, 0.1f, true));
             presser = other.gameObject;
-            if (enabled)
+            if (enabled && other.gameObject.tag == "buttonPresser")
             {
                 onButtonPressed();
             }
             
             sound.Play();
-            isPressed = true;
+            
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if(other.gameObject == presser) {
-            button.transform.position = button.transform.position + new Vector3(0, 0.02f, 0);
+        if(isPressed && other.gameObject == presser) {
+            
+            //button.transform.position = unpressedPos;
+            StartCoroutine(MoveOverSpeed(button, unpressedPos, 0.1f, false));
             if (enabled)
             {
                 onButtonReleased();
             }
-            isPressed = false;
+            
         }
     }
     private void onButtonPressed()
     {
         anim.SetBool("button_pressed", true);
-
     }
     private void onButtonReleased()
     {
@@ -76,5 +78,26 @@ public class ButtonTrap : MonoBehaviour
         lamp.on = true;
         lamp.lightColor = ButtonLamp.eColor.Green;
     }
+
+    
+    public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed, bool isPressedd)
+    {
+        /*
+        while (objectToMove.transform.position != end)
+        {
+            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        
+           
+        }
+
+        */
+        
+        button.transform.position = end;
+        yield return new WaitForSeconds(0.5f);
+        isPressed = isPressedd;
+
+    }
+    
 }
 
