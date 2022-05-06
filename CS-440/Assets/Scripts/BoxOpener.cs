@@ -11,6 +11,7 @@ public class BoxOpener : MonoBehaviour
     [SerializeField]
     public float breakingLimit;
     public Collider boxTop;
+    public GameObject[] tools;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,10 @@ public class BoxOpener : MonoBehaviour
         if(breakBox){
             animator.enabled = true;
             boxTop.enabled = false;
+            foreach(GameObject tool in tools)
+            {
+                tool.GetComponent<OVRGrabbable>().enabled = true;
+            }
         }
     }
 }

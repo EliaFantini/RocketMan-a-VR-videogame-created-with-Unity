@@ -25,6 +25,7 @@ public class ButtonTrap : MonoBehaviour
     public bool isPressed;
     public bool enabled;
     public ButtonLamp lamp;
+    public TrapDoorController trapDoorController;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class ButtonTrap : MonoBehaviour
             presser = other.gameObject;
             if (enabled && other.gameObject.tag == "buttonPresser")
             {
-                onButtonPressed();
+                trapDoorController.setIsOpen(true);
             }
             
             sound.Play();
@@ -59,19 +60,12 @@ public class ButtonTrap : MonoBehaviour
             StartCoroutine(MoveOverSpeed(button, unpressedPos, 0.1f, false));
             if (enabled)
             {
-                onButtonReleased();
+                trapDoorController.setIsOpen(false);
             }
             
         }
     }
-    private void onButtonPressed()
-    {
-        anim.SetBool("button_pressed", true);
-    }
-    private void onButtonReleased()
-    {
-        anim.SetBool("button_pressed", false);
-    }
+
     public void enableButton()
     {
         enabled = true;

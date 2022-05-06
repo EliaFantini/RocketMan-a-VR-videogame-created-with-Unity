@@ -21,8 +21,6 @@ public class CableComponent : MonoBehaviour
 	[SerializeField] private int verletIterations = 1;
 	[SerializeField] private int solverIterations = 1;
 
-	//[Range(0,3)]
-	[SerializeField] private float stiffness = 1f;
 
 	private LineRenderer line;
 	private CableParticle[] points;
