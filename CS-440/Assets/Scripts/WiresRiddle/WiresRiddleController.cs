@@ -5,7 +5,7 @@ using UnityEngine;
 public class WiresRiddleController : MonoBehaviour
 {
     [SerializeField]
-    public GameObject screen;
+    public GameObject[] screens;
     public ButtonTrap button;
     public GameObject[] outletArr;
     public GameObject[] correctPlugArr;
@@ -16,11 +16,18 @@ public class WiresRiddleController : MonoBehaviour
     {
         correctlyPluggedCounter = 0;
         outletArr = new GameObject[5];
+        foreach (GameObject screen in screens)
+        {
+            screen.SetActive(false);
+        }
     }
 
     public void turnOnScreen()
     {
-        screen.SetActive(true);
+        foreach(GameObject screen in screens)
+        {
+            screen.SetActive(true);
+        }
     }
 
     public void addCorrectlyPlugged()
