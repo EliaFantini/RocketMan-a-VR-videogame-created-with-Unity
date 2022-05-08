@@ -11,8 +11,11 @@ public class PlateRemoval : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(screw1.GetComponent<Rigidbody>().isKinematic == false
+        if (screw1.GetComponent<Rigidbody>().isKinematic == false
         && screw2.GetComponent<Rigidbody>().isKinematic == false)
+        {
             gameObject.GetComponent<Animator>().SetBool("button_pressed", true);
+            GameManager.Instance.UpdateGameState(RiddlesProgress.ScrewsRemoved);
+        }
     }
 }

@@ -19,7 +19,7 @@ public class screwDriving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Drill.GetComponent<OVRGrabbable>().isGrabbed || Input.GetKeyDown("space"))
+        if(Drill.GetComponent<OVRGrabbable>().isGrabbed)
         {
             if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f){
                 trigger = true;

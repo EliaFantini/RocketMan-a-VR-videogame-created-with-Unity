@@ -27,6 +27,7 @@ public class WiresRiddleController : MonoBehaviour
         foreach(GameObject screen in screens)
         {
             screen.SetActive(true);
+            GameManager.Instance.UpdateGameState(RiddlesProgress.PowerPlugged);
         }
     }
 
@@ -36,6 +37,7 @@ public class WiresRiddleController : MonoBehaviour
         if (correctlyPluggedCounter >= 5)
         {
             button.enableButton();
+            GameManager.Instance.UpdateGameState(RiddlesProgress.WiresPattern);
         }
 
     }

@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: 210b25fa5e334f74f87c05db00ca2e49
+timeCreated: 1527784295
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Balkony-1-1
+    100002: DoorExtension-1-1
+    100004: FrontExtension-1-1
+    100006: //RootNode
+    100008: Main-1-1
+    100010: RoofWindowBig-1-1
+    100012: RoofWindowCentre-1-1
+    100014: RoofWindowsMiddle-1-1
+    100016: RoofWindowsSides-1-1
+    400000: Balkony-1-1
+    400002: DoorExtension-1-1
+    400004: FrontExtension-1-1
+    400006: //RootNode
+    400008: Main-1-1
+    400010: RoofWindowBig-1-1
+    400012: RoofWindowCentre-1-1
+    400014: RoofWindowsMiddle-1-1
+    400016: RoofWindowsSides-1-1
+    2300000: Balkony-1-1
+    2300002: DoorExtension-1-1
+    2300004: FrontExtension-1-1
+    2300006: Main-1-1
+    2300008: RoofWindowBig-1-1
+    2300010: RoofWindowCentre-1-1
+    2300012: RoofWindowsMiddle-1-1
+    2300014: RoofWindowsSides-1-1
+    3300000: Balkony-1-1
+    3300002: DoorExtension-1-1
+    3300004: FrontExtension-1-1
+    3300006: Main-1-1
+    3300008: RoofWindowBig-1-1
+    3300010: RoofWindowCentre-1-1
+    3300012: RoofWindowsMiddle-1-1
+    3300014: RoofWindowsSides-1-1
+    4300000: DoorExtension-1-1
+    4300002: RoofWindowsSides-1-1
+    4300004: Balkony-1-1
+    4300006: FrontExtension-1-1
+    4300008: Main-1-1
+    4300010: RoofWindowCentre-1-1
+    4300012: RoofWindowsMiddle-1-1
+    4300014: RoofWindowBig-1-1
+    6400000: Balkony-1-1
+    6400002: DoorExtension-1-1
+    6400004: FrontExtension-1-1
+    6400006: Main-1-1
+    6400008: RoofWindowBig-1-1
+    6400010: RoofWindowCentre-1-1
+    6400012: RoofWindowsMiddle-1-1
+    6400014: RoofWindowsSides-1-1
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

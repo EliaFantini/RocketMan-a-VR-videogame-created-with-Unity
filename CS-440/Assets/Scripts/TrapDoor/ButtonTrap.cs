@@ -46,6 +46,7 @@ public class ButtonTrap : MonoBehaviour
             if (enabled && other.gameObject.tag == "buttonPresser")
             {
                 trapDoorController.setIsOpen(true);
+                GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
             }
             
             sound.Play();
