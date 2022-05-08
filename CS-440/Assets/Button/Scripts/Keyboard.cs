@@ -10,7 +10,7 @@ public class Keyboard : MonoBehaviour
 
     public void InsertChar(string c) {
         inputField.text += c;
-        if(inputField.text.Equals("1111")){
+        if(inputField.text.Equals("9344")){
             capsuleDoor.open();
         }
     }
