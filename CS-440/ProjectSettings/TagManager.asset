@@ -11,6 +11,7 @@ TagManager:
   - PowerSocket
   - hammer
   - buttonPresser
+  - fire
   layers:
   - Default
   - TransparentFX
