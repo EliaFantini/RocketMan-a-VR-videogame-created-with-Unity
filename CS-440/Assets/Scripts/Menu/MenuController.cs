@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public FadeScreen fadeScreen;
     public void PlayButton()
     {
-        SceneManager.LoadScene("Experiment2");
+        fadeScreen.fadeOut(changeScene, "Experiment2");
+        
+    }
+
+    public void changeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

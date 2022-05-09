@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public RiddlesProgress currentState;
     private bool[] riddlesSolved;
+    public FadeScreen fadeScreen;
 
     private void Awake()
     {
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             riddlesSolved = new bool[RiddlesProgress.GetValues(typeof(RiddlesProgress)).Length];
             DontDestroyOnLoad(gameObject);
+            UpdateGameState(RiddlesProgress.Start);
         }
         else
         {
@@ -68,8 +71,22 @@ public class GameManager : MonoBehaviour
     {
         if( riddlesSolved[(int)RiddlesProgress.RocketLaunched])
         {
-            // TODO
+            StartCoroutine(RocketLaunch());
         }
+    }
+
+
+    public IEnumerator RocketLaunch()
+    {
+        AnimationManager.Instance.rocketLaunchAnimation();
+        yield return new WaitForSeconds(5);
+        fadeScreen.fadeOut(changeScene, "RocketInSpace");
+
+    }
+
+    public void changeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
 }

@@ -19,7 +19,6 @@ public class ButtonTrap : MonoBehaviour
     public GameObject Door;
     public GameObject button;
     public ButtonLamp buttonLamp;
-    private Animator anim;
     GameObject presser;
     AudioSource sound;
     public bool isPressed;
@@ -32,18 +31,17 @@ public class ButtonTrap : MonoBehaviour
         sound = GetComponent<AudioSource>();
         isPressed = false;
         enabled = false;
-        anim = Door.GetComponent<Animator>();
 
         lamp = button.GetComponent<ButtonLamp>();
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(!isPressed) {
+        if(!isPressed && other.gameObject.tag == "buttonPresser") {
             
             //button.transform.position = pressedPos;
             StartCoroutine(MoveOverSpeed(button, pressedPos, 0.1f, true));
             presser = other.gameObject;
-            if (enabled && other.gameObject.tag == "buttonPresser")
+            if (enabled )
             {
                 trapDoorController.setIsOpen(true);
                 GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
