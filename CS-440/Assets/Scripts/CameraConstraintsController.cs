@@ -16,6 +16,8 @@ using UnityEngine;
 [RequireComponent(typeof(OVRPlayerController))]
 public class CameraConstraintsController : MonoBehaviour
 {
+
+	public FadeScreen fadeScreen;
 	/// <summary>
 	/// This should be a reference to the OVRCameraRig that is usually a child of the PlayerController.
 	/// </summary>
@@ -200,10 +202,10 @@ public class CameraConstraintsController : MonoBehaviour
 			}
 		}
 
-		//if (EnableFadeout)
-		//{
-		//float fadeLevel = Mathf.Clamp01((CurrentDistance - FadeMinDistance)/ (FadeMaxDistance - FadeMinDistance));
-		//OVRInspector.instance.fader.SetFadeLevel(fadeLevel * MaxFade);
-		//}
+		if (EnableFadeout)
+		{
+			float fadeLevel = Mathf.Clamp01((CurrentDistance - FadeMinDistance)/ (FadeMaxDistance - FadeMinDistance));
+			fadeScreen.fade(fadeLevel * MaxFade);
+		}
 	}
 }

@@ -33,6 +33,13 @@ public class FadeScreen : MonoBehaviour
         StartCoroutine(FadeRoutineWithFinalFunctionCall(functionToCall, strParameter, 0, 1));
     }
 
+    public void fade(float levelOfFade)
+    {
+        Color newColor = fadeColor;
+        newColor.a = levelOfFade;
+        rend.material.SetColor("_Color", newColor);
+    }
+
     public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
     {
         float timer = 0;
