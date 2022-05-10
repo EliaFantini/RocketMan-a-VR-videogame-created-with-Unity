@@ -11,12 +11,17 @@ public class JoystickControl : MonoBehaviour
     [SerializeField]
     private float sideToSideTilt = 0;
 
+    public ButtonLamp buttonLamp;
     // Update is called once per frame
     void Update()
     {
         forwardBackwardTilt = topOfJoystick.rotation.eulerAngles.x;
         if(forwardBackwardTilt < 355 && forwardBackwardTilt > 290){
             forwardBackwardTilt = Mathf.Abs(forwardBackwardTilt - 360);
+            buttonLamp.on = true;
+            if(forwardBackwardTilt > 45) {
+                buttonLamp.on = true;
+            }
             Debug.Log("Backward" + forwardBackwardTilt);
         } else if (forwardBackwardTilt > 5 && forwardBackwardTilt < 74) {
             Debug.Log("Forward" + forwardBackwardTilt);
@@ -39,7 +44,8 @@ public class JoystickControl : MonoBehaviour
                                         other.transform.position.y, 
                                         other.transform.position.z ) ;
             this.transform.LookAt( targetPostition ) ;
-
+            
+            //if use this istead the joystick rotates in all directions
             //transform.LookAt(other.transform.position, transform.up);
             
         }
