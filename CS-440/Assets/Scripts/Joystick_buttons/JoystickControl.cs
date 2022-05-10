@@ -30,11 +30,18 @@ public class JoystickControl : MonoBehaviour
         else if(sideToSideTilt > 5 && sideToSideTilt < 74) {
             Debug.Log("Left" + sideToSideTilt);
         }
+
     }
 
     private void OnTriggerStay(Collider other) {
         if(other.CompareTag("PlayerHand")) {
-            transform.LookAt(other.transform.position, transform.up);
+            Vector3 targetPostition = new Vector3( this.transform.position.x, 
+                                        other.transform.position.y, 
+                                        other.transform.position.z ) ;
+            this.transform.LookAt( targetPostition ) ;
+
+            //transform.LookAt(other.transform.position, transform.up);
+            
         }
     }
 }
