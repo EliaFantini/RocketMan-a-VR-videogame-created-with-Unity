@@ -12,6 +12,7 @@ TagManager:
   - hammer
   - buttonPresser
   - fire
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
