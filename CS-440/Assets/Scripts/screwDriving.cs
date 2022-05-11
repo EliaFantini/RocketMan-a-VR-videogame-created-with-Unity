@@ -12,6 +12,7 @@ public class screwDriving : MonoBehaviour
     private bool trigger = false;
     [SerializeField]
     public GameObject Drill;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,8 @@ public class screwDriving : MonoBehaviour
                 rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
                 rb.transform.Rotate(0,0,-15,Space.Self);
                 timeScrew +=1;
+                audio.time = 1f;
+                audio.Play();
             }
 
         }

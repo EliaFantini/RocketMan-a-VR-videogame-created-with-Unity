@@ -7,6 +7,7 @@ public class PlateRemoval : MonoBehaviour
     [SerializeField]
     public GameObject screw1;
     public GameObject screw2;
+    public AudioSource sound;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,8 @@ public class PlateRemoval : MonoBehaviour
         && screw2.GetComponent<Rigidbody>().isKinematic == false)
         {
             gameObject.GetComponent<Animator>().SetBool("button_pressed", true);
+            sound.time = 1f;
+            sound.Play();
             GameManager.Instance.UpdateGameState(RiddlesProgress.ScrewsRemoved);
         }
     }

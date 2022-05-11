@@ -33,9 +33,12 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
 
-	/// <summary>
-	/// If true, the object can currently be grabbed.
-	/// </summary>
+    public AudioClip grabSound;
+    public AudioClip grabReleaseSound;
+
+    /// <summary>
+    /// If true, the object can currently be grabbed.
+    /// </summary>
     public bool allowOffhandGrab
     {
         get { return m_allowOffhandGrab; }
@@ -115,6 +118,7 @@ public class OVRGrabbable : MonoBehaviour
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        AudioSource.PlayClipAtPoint(grabSound, transform.position);
     }
 
 	/// <summary>
@@ -128,6 +132,7 @@ public class OVRGrabbable : MonoBehaviour
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
+        AudioSource.PlayClipAtPoint(grabReleaseSound, transform.position);
     }
 
     void Awake()
