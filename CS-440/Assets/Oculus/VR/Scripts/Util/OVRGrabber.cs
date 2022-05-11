@@ -22,6 +22,7 @@ public class OVRGrabber : MonoBehaviour
     // Grip trigger thresholds for picking up objects, with some hysteresis.
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
+    public AudioClip hapticAudioClip;
 
     // Demonstrates parenting the held object to the hand's transform when grabbed.
     // When false, the grabbed object is moved every FixedUpdate using MovePosition.
@@ -50,7 +51,7 @@ public class OVRGrabber : MonoBehaviour
 
     // Should be OVRInput.Controller.LTouch or OVRInput.Controller.RTouch.
     [SerializeField]
-    protected OVRInput.Controller m_controller;
+    public OVRInput.Controller m_controller;
 
 	// You can set this explicitly in the inspector if you're using m_moveHandPosition.
 	// Otherwise, you should typically leave this null and simply parent the hand to the hand anchor
@@ -314,7 +315,19 @@ public class OVRGrabber : MonoBehaviour
             {
                 m_grabbedObj.transform.parent = transform;
             }
+
+
+            OVRHapticsClip hapticsClip = new OVRHapticsClip(hapticAudioClip);
+            if (m_controller == OVRInput.Controller.LTouch)
+            {
+                OVRHaptics.LeftChannel.Preempt(hapticsClip);
+            }
+            else
+            {
+                OVRHaptics.RightChannel.Preempt(hapticsClip);
+            }
         }
+        
     }
 
     protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
@@ -353,10 +366,22 @@ public class OVRGrabber : MonoBehaviour
 			Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
 
             GrabbableRelease(linearVelocity, angularVelocity);
+
+
+            OVRHapticsClip hapticsClip = new OVRHapticsClip(hapticAudioClip);
+            if (m_controller == OVRInput.Controller.LTouch)
+            {
+                OVRHaptics.LeftChannel.Preempt(hapticsClip);
+            }
+            else
+            {
+                OVRHaptics.RightChannel.Preempt(hapticsClip);
+            }
         }
 
         // Re-enable grab volumes to allow overlap events
         GrabVolumeEnable(true);
+        
     }
 
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)

@@ -38,14 +38,28 @@ public class screwDriving : MonoBehaviour
 
         if(trigger){
             transform.Rotate(0,0,15,Space.Self);
-            if(onscrew){
-                rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
-                rb.transform.Rotate(0,0,-15,Space.Self);
-                timeScrew +=1;
+            if (audio.time > 3f)
+            {
+                audio.Stop();
+            }
+            if (!audio.isPlaying)
+            {
                 audio.time = 1f;
                 audio.Play();
             }
+            OVRInput.SetControllerVibration(0.3f, 0.3f, Drill.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
+            if (onscrew){
+                rb.transform.position = rb.transform.position + new Vector3(0,0.002f,0);
+                rb.transform.Rotate(0,0,-15,Space.Self);
+                timeScrew +=1;
+                
+            }
 
+        }
+        else
+        {
+            audio.Stop();
+            OVRInput.SetControllerVibration(0.0f, 0.0f, Drill.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
         }
 
         if(timeScrew >= 120)

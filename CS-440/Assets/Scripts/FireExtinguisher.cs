@@ -12,7 +12,8 @@ public class FireExtinguisher : MonoBehaviour
     [SerializeField]
     public GameObject fireExtinguisher;
     public ParticleSystem[] fireEffects;
-    public BoxCollider boxCollider; 
+    public BoxCollider boxCollider;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,18 +44,31 @@ public class FireExtinguisher : MonoBehaviour
         {
             foamEffect.Play();
             foamEffect.playbackSpeed= 10;
+            if (audio.time > 4f)
+            {
+                audio.Stop();
+            }
+            if (!audio.isPlaying)
+            {
+                audio.time = 2f;
+                audio.Play();
+            }
+            OVRInput.SetControllerVibration(0.3f, 0.3f, fireExtinguisher.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
             if (onFire)
             {
                 foreach(ParticleSystem fireEffect in fireEffects)
                 {
                     fireEffect.startLifetime = Mathf.Lerp(fireEffect.startLifetime, 0f, Time.deltaTime);
-                }
+                }            
+                
                 timeOnFire += 1;
             }
 
         }
         else
         {
+            audio.Stop();
+            OVRInput.SetControllerVibration(0f, 0f, fireExtinguisher.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
             foamEffect.Stop();
         }
 
