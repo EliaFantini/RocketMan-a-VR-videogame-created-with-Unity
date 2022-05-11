@@ -16,12 +16,16 @@ public class SwitchControl : MonoBehaviour
     private GameObject switchBase;
 
     public ButtonLamp buttonLamp;
+
+    private Quaternion original_transform;
     
     // Start is called before the first frame update
     void Start()
     {   
         source = gameObject.AddComponent<AudioSource>();
         switchBase = transform.GetChild(0).gameObject; //get cylinder(switch base)
+        original_transform = Quaternion.Euler(transform.eulerAngles.x,
+                                                        transform.eulerAngles.y, transform.eulerAngles.z);
         //turn off spotlight
         buttonLamp.on = false;
         
@@ -44,8 +48,9 @@ public class SwitchControl : MonoBehaviour
                                                         transform.eulerAngles.y, transform.eulerAngles.z);
             } else {
                 buttonLamp.on = false;
-                transform.rotation = Quaternion.Euler(transform.eulerAngles.x - switchRotation,
-                                                        transform.eulerAngles.y, transform.eulerAngles.z);
+                transform.rotation = original_transform;
+                                                        
+                                                        
             }       
         }
     }
