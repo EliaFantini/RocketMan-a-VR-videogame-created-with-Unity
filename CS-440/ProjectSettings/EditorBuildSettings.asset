@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: b8ea4a0909584f440ae64afaa95f5677
   - enabled: 0
@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Climbing.unity
     guid: 24737dd3b173955438ed28bbe57f4ca5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RocketOlivier.unity
     guid: 2b6299bd6e749a64cb8648b8434e8db6
   m_configObjects:

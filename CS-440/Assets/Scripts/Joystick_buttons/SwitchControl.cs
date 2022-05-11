@@ -12,7 +12,7 @@ public class SwitchControl : MonoBehaviour
     private float canHitAgain;
     private float switchHitAgainTime = 0.5f;
     private bool switchHit = false;
-    private float switchRotation = 100;
+    private float switchRotation = -100;
     private GameObject switchBase;
 
     public ButtonLamp buttonLamp;

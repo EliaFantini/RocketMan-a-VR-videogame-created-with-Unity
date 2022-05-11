@@ -14,19 +14,21 @@ public class JoystickControl : MonoBehaviour
     public ButtonLamp buttonLamp;
     // Update is called once per frame
     void Update()
-    {
+    {   //get tilt forward or backwards
         forwardBackwardTilt = topOfJoystick.rotation.eulerAngles.x;
         if(forwardBackwardTilt < 355 && forwardBackwardTilt > 290){
             forwardBackwardTilt = Mathf.Abs(forwardBackwardTilt - 360);
             buttonLamp.on = true;
-            if(forwardBackwardTilt > 45) {
+            if(forwardBackwardTilt < 35 && forwardBackwardTilt > 20) {
                 buttonLamp.on = true;
+            } else {
+                buttonLamp.on = false;
             }
             Debug.Log("Backward" + forwardBackwardTilt);
         } else if (forwardBackwardTilt > 5 && forwardBackwardTilt < 74) {
             Debug.Log("Forward" + forwardBackwardTilt);
         }
-
+        //Get tilt side to side
         sideToSideTilt = topOfJoystick.rotation.eulerAngles.z;
         if(sideToSideTilt < 355 && sideToSideTilt > 290){
             sideToSideTilt = Mathf.Abs(sideToSideTilt - 360);
