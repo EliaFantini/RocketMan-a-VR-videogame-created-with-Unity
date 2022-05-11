@@ -13,6 +13,8 @@ TagManager:
   - buttonPresser
   - fire
   - PlayerHand
+  - bolt
+  - uvLight
   layers:
   - Default
   - TransparentFX
