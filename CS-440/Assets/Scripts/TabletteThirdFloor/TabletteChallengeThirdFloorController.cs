@@ -13,8 +13,6 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
     public TabletteThirdFloor tab2;
     public TabletteThirdFloor tab3;
 
-
-
     public ButtonLamp finalLamp;
     // Update is called once per frame
     void Update()
@@ -44,12 +42,16 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
         
         finalLamp.on = true;
         //if all numbers are correct light up the final lamp
-        if(b1.on && b2.on && b3.on) {
+        
+
+        if (b1.on && b2.on && b3.on && b1.lightColor == ButtonLamp.eColor.Green 
+            && b2.lightColor == ButtonLamp.eColor.Green && b3.lightColor == ButtonLamp.eColor.Green) {
             finalLamp.lightColor = ButtonLamp.eColor.Green;
-        }
-        if(b1.on || b2.on || b3.on) {
+        
+        } else if(b1.on || b2.on || b3.on) {
             finalLamp.lightColor = ButtonLamp.eColor.Yellow;
-        } else {
+        }
+        else {
             finalLamp.lightColor = ButtonLamp.eColor.Red;
         }
 
