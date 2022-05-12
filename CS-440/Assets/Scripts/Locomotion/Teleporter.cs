@@ -99,7 +99,7 @@ public class Teleporter : MonoBehaviour
         if (groundDetected)
         {
             positionMarker.transform.position = groundPos + lastNormal * 0.1f;
-            positionMarker.transform.LookAt(groundPos);
+            //positionMarker.transform.LookAt(groundPos);
         }
 
         // Update Line Renderer

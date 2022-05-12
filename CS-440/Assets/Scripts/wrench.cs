@@ -5,20 +5,19 @@ using UnityEngine;
 public class wrench : MonoBehaviour
 {
 
-    private Vector3 prevPos;
+
     private GameObject bolt;
-    private float totAngle;
+    public float totAngle = 0;
     private float prevRot;
     private bool onbolt;
     private Rigidbody rb;
     public bool boltScrewed;
     [SerializeField]
-    public float threshold;
+    public ParticleSystem smoke;
     // Start is called before the first frame update
     void Start()
     {
-        prevPos = transform.position;
-        totAngle = 0;
+    
         prevRot = transform.localRotation.eulerAngles.y;
         onbolt = false;
     }
@@ -29,16 +28,18 @@ public class wrench : MonoBehaviour
         
 
 
-        if(onbolt && totAngle < threshold && ! boltScrewed){
-            float angle = transform.localRotation.eulerAngles.y - prevRot;
+        if(onbolt && ! boltScrewed){
+            float angle = transform.rotation.eulerAngles.y - prevRot;
             rb.transform.Rotate(0,0, angle, Space.Self);
-            prevRot = transform.localRotation.eulerAngles.y;
-            totAngle += angle;
+            prevRot = transform.rotation.eulerAngles.y;
+            totAngle = transform.rotation.y;
         }
-
-        if(totAngle >= threshold && ! boltScrewed && onbolt){
+        
+        if(totAngle >= 0.975 && totAngle <=0.998 && ! boltScrewed && onbolt){
             boltScrewed = true;
+            smoke.Play();
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
