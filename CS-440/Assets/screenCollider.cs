@@ -4,22 +4,51 @@ using UnityEngine;
 
 public class screenCollider : MonoBehaviour
 {
-    public bool trigger;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public bool trigger=false;
+    public screenCollider previousCollider;
+    public screenCollider nextCollider;
+    public patternLock patternLock;
+    
+
+    private void OnTriggerEnter(Collider other) {
+        if( previousCollider == null || (previousCollider.trigger == true && nextCollider == null) || (previousCollider.trigger == true && nextCollider.trigger == false))
+        {
+            trigger = true;
+            if (patternLock != null)
+            {
+                patternLock.onCorrectPattern();
+            }
+        }
+        else
+        {
+            trigger = false;
+            if(previousCollider != null)
+            {
+                previousCollider.backwardReset();
+            }
+            if (nextCollider != null)
+            {
+                nextCollider.forwardReset();
+            }
+        }
         
+    }
+    
+    public void backwardReset()
+    {
+        trigger = false;
+        if (previousCollider != null)
+        {
+            previousCollider.backwardReset();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void forwardReset()
     {
-        
-    }
-    private void OnTriggerEnter(Collider other) {
-        trigger = true;
-    }
-    private void OnTriggerExit(Collider other) {
         trigger = false;
+        if (nextCollider != null)
+        {
+            nextCollider.forwardReset();
+        }
     }
 }

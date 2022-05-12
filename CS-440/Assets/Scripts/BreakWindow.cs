@@ -12,7 +12,7 @@ public class BreakWindow : MonoBehaviour {
             gameObject.GetComponent<BreakableWindow>().breakWindow();
             broken = true;
             wrench.GetComponent<Rigidbody>().isKinematic = false;
-            //wrench.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -5, 0));
+            wrench.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -5, 0));
         }
     }
 }

@@ -36,7 +36,7 @@ public class wrench : MonoBehaviour
             totAngle += angle;
         }
 
-        if(totAngle >= threshold && ! boltScrewed){
+        if(totAngle >= threshold && ! boltScrewed && onbolt){
             boltScrewed = true;
         }
     }
