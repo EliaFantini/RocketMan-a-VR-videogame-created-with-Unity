@@ -10,6 +10,11 @@ public class ButtonLamp : MonoBehaviour
             Yellow,
             Green,
             Blue,
+            White,
+            Cyan,
+            Magenta,
+            Black,
+            Grey,
     }
 
     public bool on;
@@ -41,6 +46,21 @@ public class ButtonLamp : MonoBehaviour
                     break;
                 case eColor.Blue:
                     rend.material.SetColor("_EmissionColor", new Color(0f, 0.33f, 1f, 1f));
+                    break;
+                case eColor.White:
+                    rend.material.SetColor("_EmissionColor", Color.white);
+                    break;
+                case eColor.Cyan:
+                    rend.material.SetColor("_EmissionColor", Color.cyan);
+                    break;
+                case eColor.Magenta:
+                    rend.material.SetColor("_EmissionColor", Color.magenta);
+                    break;
+                case eColor.Black:
+                    rend.material.SetColor("_EmissionColor", Color.black);
+                    break;
+                case eColor.Grey:
+                    rend.material.SetColor("_EmissionColor", Color.grey);
                     break;
                 default:
                     break;

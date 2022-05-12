@@ -316,18 +316,24 @@ public class OVRGrabber : MonoBehaviour
                 m_grabbedObj.transform.parent = transform;
             }
 
-
-            OVRHapticsClip hapticsClip = new OVRHapticsClip(hapticAudioClip);
-            if (m_controller == OVRInput.Controller.LTouch)
-            {
-                OVRHaptics.LeftChannel.Preempt(hapticsClip);
-            }
-            else
-            {
-                OVRHaptics.RightChannel.Preempt(hapticsClip);
-            }
+            hapticPulse();
+            
         }
         
+    }
+
+
+    public void hapticPulse()
+    {
+        OVRHapticsClip hapticsClip = new OVRHapticsClip(hapticAudioClip);
+        if (m_controller == OVRInput.Controller.LTouch)
+        {
+            OVRHaptics.LeftChannel.Preempt(hapticsClip);
+        }
+        else
+        {
+            OVRHaptics.RightChannel.Preempt(hapticsClip);
+        }
     }
 
     protected virtual void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)

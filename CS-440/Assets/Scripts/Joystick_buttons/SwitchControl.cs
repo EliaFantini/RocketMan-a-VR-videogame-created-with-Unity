@@ -7,7 +7,7 @@ public class SwitchControl : MonoBehaviour
     private AudioSource source;
     public AudioClip switchSound; 
 
-    private bool on = false;
+    public bool on = false;
 
     private float canHitAgain;
     private float switchHitAgainTime = 0.5f;
@@ -43,11 +43,11 @@ public class SwitchControl : MonoBehaviour
 
             //move lever
             if(on == true) {
-                buttonLamp.on = true;
+                
                 transform.rotation = Quaternion.Euler(transform.eulerAngles.x + switchRotation,
                                                         transform.eulerAngles.y, transform.eulerAngles.z);
             } else {
-                buttonLamp.on = false;
+                
                 transform.rotation = original_transform;
                                                         
                                                         
@@ -60,6 +60,7 @@ public class SwitchControl : MonoBehaviour
         if(other.CompareTag("PlayerHand") && canHitAgain < Time.time) {
             canHitAgain = Time.time + switchHitAgainTime;
             switchHit = true;
+            other.gameObject.GetComponentInChildren<OVRGrabber>().hapticPulse();
         }
     }
 }

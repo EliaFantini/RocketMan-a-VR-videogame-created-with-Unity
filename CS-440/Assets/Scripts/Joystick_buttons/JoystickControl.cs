@@ -42,13 +42,13 @@ public class JoystickControl : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
-        if(other.CompareTag("PlayerHand")) {
-            if(canMove){
-                Vector3 targetPostition = new Vector3( this.transform.position.x, 
-                                    other.transform.position.y, 
-                                    other.transform.position.z ) ;
-                this.transform.LookAt( targetPostition ) ;
-            }
+        if(other.CompareTag("PlayerHand") && (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger) || OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))) {
+            
+            Vector3 targetPostition = new Vector3( this.transform.position.x, 
+                                other.transform.position.y, 
+                                other.transform.position.z ) ;
+            this.transform.LookAt( targetPostition ) ;
+            
            
             
             //if use this istead the joystick rotates in all directions
