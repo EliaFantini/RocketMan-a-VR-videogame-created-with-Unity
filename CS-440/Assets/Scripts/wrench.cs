@@ -27,9 +27,8 @@ public class wrench : MonoBehaviour
     void Update()
     {
         if(gameObject.GetComponent<Rigidbody>().isKinematic){
-            if(transform.position != prevPos)
+            if(gameObject.GetComponent<OVRGrabbable>().isGrabbed)
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            prevPos = transform.position;
         }
 
 
