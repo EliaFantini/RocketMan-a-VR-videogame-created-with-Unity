@@ -16,7 +16,7 @@ using UnityEngine;
 [RequireComponent(typeof(OVRPlayerController))]
 public class CameraConstraintsController : MonoBehaviour
 {
-
+	public LayerMask excludeLayers;
 	public FadeScreen fadeScreen;
 	/// <summary>
 	/// This should be a reference to the OVRCameraRig that is usually a child of the PlayerController.
@@ -86,7 +86,7 @@ public class CameraConstraintsController : MonoBehaviour
 
 	void OnEnable()
 	{
-		_playerController.CameraUpdated += _cameraUpdateAction;
+		//_playerController.CameraUpdated += _cameraUpdateAction;
 		_playerController.PreCharacterMove += _preCharacterMovementAction;
 	}
 
@@ -190,8 +190,8 @@ public class CameraConstraintsController : MonoBehaviour
 
 		RaycastHit info;
 		var max = _playerController.CameraHeight;
-		if (Physics.SphereCast(bottom, _character.radius, Vector3.up, out info, max,
-			gameObject.layer, QueryTriggerInteraction.Ignore))
+		if (Physics.SphereCast(CameraRig.centerEyeAnchor.position, _character.radius, Vector3.forward, out info, max,
+			~excludeLayers, QueryTriggerInteraction.Ignore))
 		{
 			// It hit something. Use the fade distance min/max to determine how much to fade.
 			var dist = info.distance;
@@ -208,4 +208,58 @@ public class CameraConstraintsController : MonoBehaviour
 			fadeScreen.fade(fadeLevel * MaxFade);
 		}
 	}
+
+
+	/*
+	private bool CheckCameraOverlapped()
+	{
+		Camera camera = CameraRig.centerEyeAnchor.GetComponent<Camera>();
+
+		// Use a ray from the capsule starting at the camera's height, but clamped
+		// to make sure it comes from the capsule.  We clamp slightly inside of
+		// the capsule to account for the sphere cast radius and a small offset
+		// in case things would otherwise be touching.
+		Vector3 origin = _character.transform.position;
+		float yOffset = Mathf.Max(0.0f, (_character.height * 0.5f) - camera.nearClipPlane - 0.01f);
+		origin.y = Mathf.Clamp(CameraRig.centerEyeAnchor.position.y, _character.transform.position.y - yOffset, _character.transform.position.y + yOffset);
+		Vector3 delta = CameraRig.centerEyeAnchor.position - origin;
+		float distance = delta.magnitude;
+		Vector3 direction = delta / distance;
+		RaycastHit hitInfo;
+		//return Physics.SphereCast(origin, camera.nearClipPlane, direction, out hitInfo, distance, CollideLayers, QueryTriggerInteraction.Ignore);
+	}
+
+	/// <summary>
+	/// This method checks whether the camera is close enough to geometry to
+	/// cause it to start clipping, and if so, return the overlap amount.
+	/// </summary>
+	private bool CheckCameraNearClipping(out float result)
+	{
+		Camera camera = CameraRig.centerEyeAnchor.GetComponent<Camera>();
+
+		Vector3[] frustumCorners = new Vector3[4];
+		camera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), camera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, frustumCorners);
+
+		// Cast a ray through each corner of the frustum and the center, and take the
+		// maximum overlap (if any) returned as the basis to decide how much to fade.
+		Vector3 frustumBottomLeft = CameraRig.centerEyeAnchor.position + (Vector3.Normalize(CameraRig.centerEyeAnchor.TransformVector(frustumCorners[0])) * FADE_RAY_LENGTH);
+		Vector3 frustumTopLeft = CameraRig.centerEyeAnchor.position + (Vector3.Normalize(CameraRig.centerEyeAnchor.TransformVector(frustumCorners[1])) * FADE_RAY_LENGTH);
+		Vector3 frustumTopRight = CameraRig.centerEyeAnchor.position + (Vector3.Normalize(CameraRig.centerEyeAnchor.TransformVector(frustumCorners[2])) * FADE_RAY_LENGTH);
+		Vector3 frustumBottomRight = CameraRig.centerEyeAnchor.position + (Vector3.Normalize(CameraRig.centerEyeAnchor.TransformVector(frustumCorners[3])) * FADE_RAY_LENGTH);
+		Vector3 frustumCenter = (frustumTopLeft + frustumBottomRight) / 2.0f;
+
+		bool hit = false;
+		result = 0.0f;
+		foreach (Vector3 frustumPoint in new Vector3[] { frustumBottomLeft, frustumTopLeft, frustumTopRight, frustumBottomRight, frustumCenter })
+		{
+			RaycastHit hitInfo;
+			if (Physics.Linecast(CameraRig.centerEyeAnchor.position, frustumPoint, out hitInfo, CollideLayers, QueryTriggerInteraction.Ignore))
+			{
+				hit = true;
+				result = Mathf.Max(result, Vector3.Distance(hitInfo.point, frustumPoint));
+			}
+		}
+		return hit;
+	}
+	*/
 }

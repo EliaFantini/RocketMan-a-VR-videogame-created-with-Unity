@@ -6,7 +6,7 @@ public class Locomotion : MonoBehaviour
 {
 
     public Teleporter teleporter;
-
+    private bool locked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,17 +17,20 @@ public class Locomotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp) && !locked)
         {
+            locked = true;
             //teleporter.updateOVRPlayerPos();
             teleporter.ToggleDisplay(true);
+            
         }
 
-        if (OVRInput.GetUp(OVRInput.RawButton.RThumbstickUp))
+        if (OVRInput.GetUp(OVRInput.RawButton.RThumbstickUp) && locked)
         {
-            
-            teleporter.Teleport();
+            locked = false;
             teleporter.ToggleDisplay(false);
+            teleporter.Teleport();
+            
         }
     }
 }

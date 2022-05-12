@@ -37,39 +37,6 @@ public class Teleporter : MonoBehaviour
     private bool displayActive = false; // don't update path when it's false.
     private Quaternion fixedRotation;
 
-    public void updateOVRPlayerPos()
-    {
-        player.GetComponent<CharacterController>().Move(eyeAnchor.transform.position - player.GetComponent<Transform>().position);
-        eyeAnchor.transform.localPosition = new Vector3(0.0f, eyeAnchor.transform.localPosition.y, 0.0f);
-        
-    }
-
-
-    // Teleport target transform to ground position
-    public void Teleport()
-    {
-        if (groundDetected)
-        {
-            fixedRotation = eyeAnchor.transform.rotation;
-            
-            player.GetComponent<CharacterController>().Move(positionMarker.transform.position - player.GetComponent<Transform>().position);
-            OVRManager.display.RecenterPose();
-            eyeAnchor.transform.rotation = fixedRotation;
-            
-        }
-        else
-        {
-            Debug.Log("Ground wasn't detected");
-        }
-    }
-
-    // Active Teleporter Arc Path
-    public void ToggleDisplay(bool active)
-    {
-        arcRenderer.enabled = active;
-        positionMarker.SetActive(active);
-        displayActive = active;
-    }
 
 
 
@@ -82,7 +49,7 @@ public class Teleporter : MonoBehaviour
         positionMarker.SetActive(false);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (displayActive)
         {
@@ -139,6 +106,40 @@ public class Teleporter : MonoBehaviour
 
         arcRenderer.positionCount = vertexList.Count;
         arcRenderer.SetPositions(vertexList.ToArray());
+    }
+
+    public void updateOVRPlayerPos()
+    {
+        player.GetComponent<CharacterController>().Move(eyeAnchor.transform.position - player.GetComponent<Transform>().position);
+        eyeAnchor.transform.localPosition = new Vector3(0.0f, eyeAnchor.transform.localPosition.y, 0.0f);
+
+    }
+
+
+    // Teleport target transform to ground position
+    public void Teleport()
+    {
+        if (groundDetected)
+        {
+            //fixedRotation = eyeAnchor.transform.rotation;
+
+            player.GetComponent<CharacterController>().Move(positionMarker.transform.position - player.GetComponent<Transform>().position);
+            //OVRManager.display.RecenterPose();
+            //eyeAnchor.transform.rotation = fixedRotation;
+
+        }
+        else
+        {
+            Debug.Log("Ground wasn't detected");
+        }
+    }
+
+    // Active Teleporter Arc Path
+    public void ToggleDisplay(bool active)
+    {
+        arcRenderer.enabled = active;
+        positionMarker.SetActive(active);
+        displayActive = active;
     }
 
 
