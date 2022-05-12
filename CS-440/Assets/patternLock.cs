@@ -27,8 +27,12 @@ public class patternLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(light && !light.activeSelf)
+        if(light && light.GetComponent<Light>().enabled)
+            gameObject.GetComponent<MeshRenderer>().material = matZlock;
+
+        else if(light && !light.GetComponent<Light>().enabled)
             gameObject.GetComponent<MeshRenderer>().material = matlock;
+
 
         for(int i = 0; i < colliders.Length; i ++){
             triggers[i] = colliders[i].GetComponent<screenCollider>().trigger;
@@ -56,14 +60,16 @@ public class patternLock : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag =="uvLight"){
+        if(other.tag =="uvLight")
             light = other.gameObject;
+        if(other.GetComponent<Light>().enabled){
             gameObject.GetComponent<MeshRenderer>().material = matZlock;
         }
     }
     
     private void OnTriggerExit(Collider other) {
         if(other.tag == "uvLight"){
+            light = null;
             gameObject.GetComponent<MeshRenderer>().material = matlock;
         }
     }

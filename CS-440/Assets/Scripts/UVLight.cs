@@ -11,7 +11,7 @@ public class UVLight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        light.SetActive(false);
+        light.GetComponent<Light>().enabled = false;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class UVLight : MonoBehaviour
     {
         if(gameObject.GetComponent<OVRGrabbable>().isGrabbed){
             if (OVRInput.GetDown(OVRInput.Button.One))
-                light.SetActive(!light.activeSelf);
+                light.GetComponent<Light>().enabled = !light.GetComponent<Light>().enabled;
         }
     }
 }
