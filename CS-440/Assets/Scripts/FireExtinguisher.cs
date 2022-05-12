@@ -68,7 +68,7 @@ public class FireExtinguisher : MonoBehaviour
         else
         {
             audio.Stop();
-            OVRInput.SetControllerVibration(0f, 0f, fireExtinguisher.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
+            //OVRInput.SetControllerVibration(0f, 0f, fireExtinguisher.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
             foamEffect.Stop();
         }
 

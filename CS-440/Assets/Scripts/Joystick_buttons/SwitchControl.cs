@@ -27,7 +27,7 @@ public class SwitchControl : MonoBehaviour
         original_transform = Quaternion.Euler(transform.eulerAngles.x,
                                                         transform.eulerAngles.y, transform.eulerAngles.z);
         //turn off spotlight
-        buttonLamp.on = false;
+        //buttonLamp.on = false;
         
     }
 

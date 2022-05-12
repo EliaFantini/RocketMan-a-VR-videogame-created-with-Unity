@@ -26,10 +26,7 @@ public class wrench : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.GetComponent<Rigidbody>().isKinematic){
-            if(gameObject.GetComponent<OVRGrabbable>().isGrabbed)
-                gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        }
+        
 
 
         if(onbolt && totAngle < threshold && ! boltScrewed){

@@ -59,7 +59,7 @@ public class screwDriving : MonoBehaviour
         else
         {
             audio.Stop();
-            OVRInput.SetControllerVibration(0.0f, 0.0f, Drill.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
+            //OVRInput.SetControllerVibration(0.0f, 0.0f, Drill.GetComponent<OVRGrabbable>().grabbedBy.m_controller);
         }
 
         if(timeScrew >= 120)

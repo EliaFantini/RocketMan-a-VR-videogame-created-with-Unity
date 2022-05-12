@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/RocketEliaCopy.unity
     guid: a11295a09d054084db3935983cfc2cb6
-  - enabled: 1
-    path: Assets/Scenes/Experiment2.unity
+  - enabled: 0
+    path: Assets/Scenes/Experiment2 - Copia.unity
     guid: 0c581ee97c0809a4ebb55820356917c3
   - enabled: 0
     path: Assets/Scenes/Experiment.unity
@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/RocketOlivier.unity
     guid: 2b6299bd6e749a64cb8648b8434e8db6
+  - enabled: 1
+    path: Assets/Scenes/Experiment2.unity
+    guid: 5e6a499866865a641b6bb59519fbadee
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ef7497bde076bfa4db2647fa75f831dd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e38bf2dfff44e1342bba64f7fa54df97, type: 2}
