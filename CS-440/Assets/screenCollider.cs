@@ -5,6 +5,7 @@ using UnityEngine;
 public class screenCollider : MonoBehaviour
 {
     public bool trigger=false;
+    private bool alreadyDone = false;
     public screenCollider previousCollider;
     public screenCollider nextCollider;
     public patternLock patternLock;
@@ -14,9 +15,10 @@ public class screenCollider : MonoBehaviour
         if( previousCollider == null || (previousCollider.trigger == true && nextCollider == null) || (previousCollider.trigger == true && nextCollider.trigger == false))
         {
             trigger = true;
-            if (patternLock != null)
+            if (patternLock != null && !alreadyDone)
             {
                 patternLock.onCorrectPattern();
+                alreadyDone = true;
             }
         }
         else

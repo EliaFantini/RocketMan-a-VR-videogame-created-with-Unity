@@ -15,6 +15,7 @@ TagManager:
   - PlayerHand
   - bolt
   - uvLight
+  - redTick
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Interactive
   - TypingHands
   - Keyboard
-  - 
+  - UVLight
   - 
   - 
   - 

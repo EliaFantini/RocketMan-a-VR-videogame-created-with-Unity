@@ -7,7 +7,7 @@ public class wrench : MonoBehaviour
 
 
     private GameObject bolt;
-    public float totAngle = 0;
+    
     private float prevRot;
     private bool onbolt;
     private Rigidbody rb;
@@ -32,13 +32,10 @@ public class wrench : MonoBehaviour
             float angle = transform.rotation.eulerAngles.y - prevRot;
             rb.transform.Rotate(0,0, angle, Space.Self);
             prevRot = transform.rotation.eulerAngles.y;
-            totAngle = transform.rotation.y;
+            
         }
         
-        if(totAngle >= 0.975 && totAngle <=0.998 && ! boltScrewed && onbolt){
-            boltScrewed = true;
-            smoke.Play();
-        }
+        
         
     }
 
@@ -59,5 +56,13 @@ public class wrench : MonoBehaviour
             rb = null;
             onbolt = false;
         }
+    }
+
+
+    public void boltRotated()
+    {
+        boltScrewed = true;
+        smoke.Play();
+        GameManager.Instance.UpdateGameState(RiddlesProgress.TurnOnEngine);
     }
 }

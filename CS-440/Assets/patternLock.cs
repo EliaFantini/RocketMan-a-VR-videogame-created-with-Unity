@@ -5,7 +5,8 @@ using UnityEngine;
 public class patternLock : MonoBehaviour
 {
     [SerializeField]
-    public GameObject box;
+    public GameObject[] objectsNotGrabbable;
+    public GameObject[] objectsGrabbable;
     public Material matZlock;
     public Material matlock;
 
@@ -22,9 +23,16 @@ public class patternLock : MonoBehaviour
 
     public void onCorrectPattern()
     {
-        box.GetComponent<Animator>().enabled = true; ;
-
-        
+        for (int i = 0; i < objectsGrabbable.Length; i++)
+        {
+            Vector3 grabbablePos = objectsNotGrabbable[i].transform.position;
+            objectsNotGrabbable[i].transform.position = objectsGrabbable[i].transform.position;
+            objectsGrabbable[i].transform.position = grabbablePos;
+        }
+        for (int i = 0; i < objectsGrabbable.Length; i++)
+        {
+            objectsGrabbable[i].GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
