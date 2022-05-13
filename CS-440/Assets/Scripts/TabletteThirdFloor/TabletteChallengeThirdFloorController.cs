@@ -14,6 +14,7 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
     public TabletteThirdFloor tab3;
 
     public ButtonLamp finalLamp;
+    private bool riddleDone = false;
    
 
     // Update is called once per frame
@@ -134,6 +135,12 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
             
             finalLamp.lightColor = ButtonLamp.eColor.Green;
             finalLamp.on = true;
+            if (!riddleDone)
+            {
+                riddleDone = true;
+                GameManager.Instance.UpdateGameState(RiddlesProgress.ThreeDigitsCode);
+            }
+            
         }
         else
         {

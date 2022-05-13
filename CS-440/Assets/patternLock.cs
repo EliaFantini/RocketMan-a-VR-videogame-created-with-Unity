@@ -33,6 +33,7 @@ public class patternLock : MonoBehaviour
         {
             objectsGrabbable[i].GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
         }
+        GameManager.Instance.UpdateGameState(RiddlesProgress.OpenBoxSign);
     }
 
     private void OnTriggerEnter(Collider other) {

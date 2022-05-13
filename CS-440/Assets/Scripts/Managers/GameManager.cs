@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
                 break;
             case RiddlesProgress.ThreeDigitsCode:
                 break;
-            case RiddlesProgress.ThreeButtonsRiddle:
+            case RiddlesProgress.SwitchesRiddle:
                 break;
             case RiddlesProgress.RocketLaunched:
                 break;
@@ -102,7 +102,7 @@ public enum RiddlesProgress{
     BrakeWindow,
     TurnOnEngine,
     ThreeDigitsCode,
-    ThreeButtonsRiddle,
+    SwitchesRiddle,
     RocketLaunched,
     FireEstinguished,
     FrameAttached,

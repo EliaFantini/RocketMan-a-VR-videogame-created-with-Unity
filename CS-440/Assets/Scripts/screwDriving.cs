@@ -13,6 +13,8 @@ public class screwDriving : MonoBehaviour
     [SerializeField]
     public GameObject Drill;
     public AudioSource audio;
+    private int screwCount = 0;
+    private bool riddleFinished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,16 @@ public class screwDriving : MonoBehaviour
                 rb.isKinematic = false;
                 rb.AddForce(1, 1, 0);
                 onscrew = false;
+                if (screwCount < 2)
+                {
+                    screwCount += 1;
+                }
+                else if (!riddleFinished)
+                {
+                    riddleFinished = true;
+                    GameManager.Instance.UpdateGameState(RiddlesProgress.ScrewsRemoved);
+                }
+                
             }
             timeScrew = 0;
             
