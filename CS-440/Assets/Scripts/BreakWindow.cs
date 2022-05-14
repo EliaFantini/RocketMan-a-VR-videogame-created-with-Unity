@@ -24,6 +24,7 @@ public class BreakWindow : MonoBehaviour {
             wrench.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
             //wrench.GetComponent<Rigidbody>().isKinematic = false;
             wrench.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -5, 0));
+            other.gameObject.GetComponentInChildren<OVRGrabbable>().grabbedBy.hapticPulse();
             GameManager.Instance.UpdateGameState(RiddlesProgress.BrakeWindow);
         }
     }

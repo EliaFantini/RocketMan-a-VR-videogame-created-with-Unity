@@ -22,11 +22,12 @@ public class SwitchChallengeController : MonoBehaviour
     {
         if(switch1.on == true && switch2.on == false &&
         switch3.on == true && switch4.on == true && switch5.on == false && switch6.on == true) {
+            finalLamp.on = true;
             if (!riddleDone)
             {
                 riddleDone = true;
 
-                finalLamp.on = true;
+                
                 GameManager.Instance.UpdateGameState(RiddlesProgress.SwitchesRiddle);
             }
             

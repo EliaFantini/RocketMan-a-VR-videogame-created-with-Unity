@@ -16,6 +16,7 @@ TagManager:
   - bolt
   - uvLight
   - redTick
+  - painting
   layers:
   - Default
   - TransparentFX

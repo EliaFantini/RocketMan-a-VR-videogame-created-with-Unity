@@ -9,7 +9,11 @@ public class patternLock : MonoBehaviour
     public GameObject[] objectsGrabbable;
     public Material matZlock;
     public Material matlock;
-
+    public Material greenExit;
+    public AudioSource audioSource;
+    public AudioClip wallGoingDown;
+    public GameObject slidingWall;
+    private bool paintingPlaced = false;
 
 
     private int timeWindow;
@@ -33,6 +37,7 @@ public class patternLock : MonoBehaviour
         {
             objectsGrabbable[i].GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
         }
+        audioSource.Play();
         GameManager.Instance.UpdateGameState(RiddlesProgress.OpenBoxSign);
     }
 
@@ -46,6 +51,15 @@ public class patternLock : MonoBehaviour
             }
 
         }
+        if (paintingPlaced)
+        {
+            paintingPlaced = false;
+            Vector3 finalSlidePosition = slidingWall.transform.position;
+            finalSlidePosition.y = finalSlidePosition.y - 4f;
+            StartCoroutine(slideWall(slidingWall, finalSlidePosition,1f));
+            AudioSource.PlayClipAtPoint(wallGoingDown, slidingWall.transform.position);
+            GameManager.Instance.UpdateGameState(RiddlesProgress.ExitPushed);
+        }
             
     }
     
@@ -55,4 +69,22 @@ public class patternLock : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material = matlock;
         }
     }
+
+    public void paintingPlacedCorrectly()
+    {
+        paintingPlaced = true;
+        gameObject.GetComponent<MeshRenderer>().material = greenExit;
+    }
+
+    public IEnumerator slideWall(GameObject objectToMove, Vector3 end, float speed)
+    {
+        yield return new WaitForSeconds(1);
+        while (objectToMove.transform.position != end)
+        {
+            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+        Destroy(objectToMove);
+    }
+
 }

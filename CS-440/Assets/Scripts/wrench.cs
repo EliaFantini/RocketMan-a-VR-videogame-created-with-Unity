@@ -12,6 +12,7 @@ public class wrench : MonoBehaviour
     private bool onbolt;
     private Rigidbody rb;
     public bool boltScrewed;
+    public TrapDoorController trapDoor;
     [SerializeField]
     public ParticleSystem smoke;
     // Start is called before the first frame update
@@ -63,6 +64,7 @@ public class wrench : MonoBehaviour
     {
         boltScrewed = true;
         smoke.Play();
+        trapDoor.setIsOpen(true);
         GameManager.Instance.UpdateGameState(RiddlesProgress.TurnOnEngine);
     }
 }

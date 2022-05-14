@@ -54,9 +54,11 @@ public class GameManager : MonoBehaviour
                 break;
             case RiddlesProgress.FireEstinguished:
                 break;
+            case RiddlesProgress.FrameFallen:
+                break;
             case RiddlesProgress.FrameAttached:
                 break;
-            case RiddlesProgress.UnderTableButton:
+            case RiddlesProgress.ExitPushed:
                 break;
             case RiddlesProgress.DoorCodeInserted:
                 break;
@@ -105,7 +107,8 @@ public enum RiddlesProgress{
     SwitchesRiddle,
     RocketLaunched,
     FireEstinguished,
+    FrameFallen,
     FrameAttached,
-    UnderTableButton,
+    ExitPushed,
     DoorCodeInserted
 }
