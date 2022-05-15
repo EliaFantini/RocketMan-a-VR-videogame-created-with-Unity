@@ -91,7 +91,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void endGame()
+    {
+
+    }
+
 }
+
+
 
 public enum RiddlesProgress{
     Start,
