@@ -25837,6 +25837,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435530, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.744
+      objectReference: {fileID: 0}
+    - target: {fileID: 435530, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -34027,6 +34031,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2371177ac12bddb4b9138e21a67fa50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &631365388
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631365382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eef5b0952ece4cf4bb682639ddff0a10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &635017787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61888,25 +61911,55 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 377797313}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: trapDoorButtonPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TrapDoorController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
 --- !u!4 &1437533516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 302345417415615214, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
   m_PrefabInstance: {fileID: 1437533515}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1437533517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345418637422880, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 1437533515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1437533518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345417470973337, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 1437533515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1437533519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437533517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d3ac6e08f4468b819285084eac4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1437533518}
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 377797313}
+        m_TargetAssemblyTypeName: TrapDoorController, Assembly-CSharp
+        m_MethodName: trapDoorButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1441505789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 163552, guid: 16ef0ee9e760e614f9acbcbf95b1489f, type: 3}
@@ -64325,6 +64378,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1695042120}
     m_Modifications:
+    - target: {fileID: 59416942083145122, guid: ba489982e21a87f4e915c811b5cd477b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4611233369677791778, guid: ba489982e21a87f4e915c811b5cd477b, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -65516,32 +65573,49 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1802208985}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: unplugAll
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WiresRiddleController, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+--- !u!1 &1559065906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345418637422880, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 1559065905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1559065907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345417470973337, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 1559065905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1559065908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559065906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d3ac6e08f4468b819285084eac4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1559065907}
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1802208985}
+        m_TargetAssemblyTypeName: WiresRiddleController, Assembly-CSharp
+        m_MethodName: unplugAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1560252160
 GameObject:
   m_ObjectHideFlags: 0
@@ -80681,19 +80755,8 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1157861526}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: trapDoorButtonPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 302345418637422886, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
-      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TrapDoorController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
 --- !u!4 &2049047767 stripped
 Transform:
@@ -80705,6 +80768,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 302345417470973342, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
   m_PrefabInstance: {fileID: 2049047766}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049047769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345418637422880, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 2049047766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049047770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 302345417470973337, guid: 219170ad4146c754b9d4bedec565a736, type: 3}
+  m_PrefabInstance: {fileID: 2049047766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2049047771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049047769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593d3ac6e08f4468b819285084eac4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2049047770}
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1157861526}
+        m_TargetAssemblyTypeName: TrapDoorController, Assembly-CSharp
+        m_MethodName: trapDoorButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2052366798
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,25 +40,20 @@ public class ButtonVR : MonoBehaviour
     {
         if (other.gameObject == presser)
         {
-            StartCoroutine(WaitAndTrigger());
+            //StartCoroutine(WaitAndTrigger());
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
         }
     }
 
-    public void SpawnSphere()
-    {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        sphere.transform.localPosition = new Vector3(0, 1, 2);
-        sphere.AddComponent<Rigidbody>();
-    }
 
+
+    /*
     public IEnumerator WaitAndTrigger()
     {
         yield return new WaitForSeconds(2);
         onRelease.Invoke();
     }
-
+    */
 }

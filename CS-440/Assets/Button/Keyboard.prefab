@@ -4983,8 +4983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 0}
-  normalButtons: {fileID: 3636829348064074762}
-  capsButtons: {fileID: 0}
+  capsuleDoor: {fileID: 0}
 --- !u!1 &3636829347505954450
 GameObject:
   m_ObjectHideFlags: 0
