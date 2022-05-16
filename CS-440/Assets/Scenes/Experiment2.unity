@@ -25819,7 +25819,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!1001 &507743359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40572,11 +40572,11 @@ Transform:
   m_Children:
   - {fileID: 1036305624}
   - {fileID: 889610026}
+  - {fileID: 1844474240}
   - {fileID: 1799821738}
   - {fileID: 1480355956}
-  - {fileID: 159348647}
-  - {fileID: 1844474240}
   - {fileID: 2019819758}
+  - {fileID: 159348647}
   m_Father: {fileID: 1490972716}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44679,7 +44679,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!1001 &848288826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47327,7 +47327,7 @@ GameObject:
   - component: {fileID: 958730316}
   - component: {fileID: 958730318}
   - component: {fileID: 958730317}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: UVlight
   m_TagString: uvLight
   m_Icon: {fileID: 0}

@@ -20,10 +20,17 @@ public class patternLock : MonoBehaviour
 
     private bool open;
 
-    private GameObject light;
-    // Start is called before the first frame update
+    private GameObject light = null;
 
+    void Update() {
+        if(light != null){
+            if(light.GetComponent<Light>().enabled)
+                gameObject.GetComponent<MeshRenderer>().material = matZlock;
 
+            else if(!light.GetComponent<Light>().enabled)
+                gameObject.GetComponent<MeshRenderer>().material = matlock;
+        }
+    }
 
     public void onCorrectPattern()
     {
