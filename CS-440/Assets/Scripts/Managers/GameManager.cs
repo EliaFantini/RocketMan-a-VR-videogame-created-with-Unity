@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            riddlesSolved = new bool[RiddlesProgress.GetValues(typeof(RiddlesProgress)).Length];
+            riddlesSolved = new bool[(int)RiddlesProgress.DoorCodeInserted + 1];
             DontDestroyOnLoad(gameObject);
             UpdateGameState(RiddlesProgress.Start);
         }
@@ -27,44 +27,12 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameState(RiddlesProgress riddle)
     {
-        currentState = riddle;
+        
         int stateIndex = (int)riddle;
         riddlesSolved[stateIndex] = true;
-        switch (riddle)
+        if ((int)riddle > (int)currentState)
         {
-            case RiddlesProgress.PowerPlugged:
-                break;
-            case RiddlesProgress.WiresPattern:
-                break;
-            case RiddlesProgress.TrapDoorButton:
-                break;
-            case RiddlesProgress.UVLightGrabbed:
-                break;
-            case RiddlesProgress.OpenBoxSign:
-                break;
-            case RiddlesProgress.BrakeWindow:
-                break;
-            case RiddlesProgress.TurnOnEngine:
-                break;
-            case RiddlesProgress.ThreeDigitsCode:
-                break;
-            case RiddlesProgress.SwitchesRiddle:
-                break;
-            case RiddlesProgress.RocketLaunched:
-                break;
-            case RiddlesProgress.FireEstinguished:
-                break;
-            case RiddlesProgress.FrameFallen:
-                break;
-            case RiddlesProgress.FrameAttached:
-                break;
-            case RiddlesProgress.ExitPushed:
-                break;
-            case RiddlesProgress.DoorCodeInserted:
-                break;
-            default:
-                break;
-
+            currentState = riddle;
         }
         checkForSceneChange();
     }

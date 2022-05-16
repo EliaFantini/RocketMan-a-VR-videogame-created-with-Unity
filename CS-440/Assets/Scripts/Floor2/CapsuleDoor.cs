@@ -5,7 +5,8 @@ using UnityEngine;
 public class CapsuleDoor : MonoBehaviour
 {
     public void open () {
-        GetComponent<Animator>().SetBool("correctCode", true); 
+        GetComponent<Animator>().SetBool("correctCode", true);
+        GameManager.Instance.UpdateGameState(RiddlesProgress.DoorCodeInserted);
 	}
 
 }

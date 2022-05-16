@@ -15,6 +15,7 @@ public class BreakWindow : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "hammer" && !broken){
+            GameManager.Instance.UpdateGameState(RiddlesProgress.BrakeWindow);
             Destroy(glassPanel);
             gameObject.GetComponent<BreakableWindow>().breakWindow();
             broken = true;
@@ -25,7 +26,7 @@ public class BreakWindow : MonoBehaviour {
             //wrench.GetComponent<Rigidbody>().isKinematic = false;
             wrench.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -5, 0));
             other.gameObject.GetComponentInChildren<OVRGrabbable>().grabbedBy.hapticPulse();
-            GameManager.Instance.UpdateGameState(RiddlesProgress.BrakeWindow);
+            
         }
     }
 }

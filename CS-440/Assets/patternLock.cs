@@ -22,24 +22,33 @@ public class patternLock : MonoBehaviour
 
     private GameObject light = null;
 
-    void Update() {
-        if(light != null){
-            if(light.GetComponent<Light>().enabled)
+    void Update()
+    {
+        if (light != null)
+        {
+            if (light.GetComponent<Light>().enabled)
                 gameObject.GetComponent<MeshRenderer>().material = matZlock;
 
-            else if(!light.GetComponent<Light>().enabled)
+            else if (!light.GetComponent<Light>().enabled)
                 gameObject.GetComponent<MeshRenderer>().material = matlock;
         }
     }
 
+
     public void onCorrectPattern()
     {
+        /*
         for (int i = 0; i < objectsGrabbable.Length; i++)
         {
             Vector3 grabbablePos = objectsNotGrabbable[i].transform.position;
             objectsNotGrabbable[i].transform.position = objectsGrabbable[i].transform.position;
             objectsGrabbable[i].transform.position = grabbablePos;
         }
+        */
+        Vector3 grabbablePos = objectsNotGrabbable[0].transform.position;
+        objectsNotGrabbable[0].transform.position = objectsGrabbable[0].transform.position;
+        objectsGrabbable[0].transform.position = grabbablePos;
+
         for (int i = 0; i < objectsGrabbable.Length; i++)
         {
             objectsGrabbable[i].GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;

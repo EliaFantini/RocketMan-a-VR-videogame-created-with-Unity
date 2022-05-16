@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] 
     public AudioClip[] riddlesClues;
     public AudioSource mainAudioSource;
+    public AudioSource backgroundMusic;
 
 
     private void Awake()
@@ -25,11 +26,15 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.Get(OVRInput.RawButton.Y))
+        if (OVRInput.GetDown(OVRInput.RawButton.Start))
         {
             int currentRiddleIndex = (int)GameManager.Instance.currentState;
-            mainAudioSource.PlayOneShot(riddlesClues[currentRiddleIndex]);
+            mainAudioSource.PlayOneShot(riddlesClues[currentRiddleIndex], 3f);
             
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.Y))
+        {
+            backgroundMusic.mute = !backgroundMusic.mute;
         }
     }
 
@@ -37,4 +42,5 @@ public class SoundManager : MonoBehaviour
     {
         AudioListener.volume = value;
     }
+
 }
