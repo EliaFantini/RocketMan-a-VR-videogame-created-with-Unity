@@ -64,6 +64,7 @@ public class wrench : MonoBehaviour
     {
         boltScrewed = true;
         smoke.Play();
+        smoke.GetComponent<AudioSource>().Play();
         trapDoor.setIsOpen(true);
         GameManager.Instance.UpdateGameState(RiddlesProgress.TurnOnEngine);
     }
