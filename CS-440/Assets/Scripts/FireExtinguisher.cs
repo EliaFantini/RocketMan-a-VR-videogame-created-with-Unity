@@ -7,12 +7,13 @@ public class FireExtinguisher : MonoBehaviour
     private int timeOnFire = 0;
     private bool onFire = false;
     private bool trigger = false;
+    private bool done = false;
     private ParticleSystem foamEffect;
     List<ParticleSystem.Particle> enter;
     [SerializeField]
     public GameObject fireExtinguisher;
     public ParticleSystem[] fireEffects;
-    public BoxCollider boxCollider;
+    public GameObject fireCollider;
     public AudioSource audio;
     // Start is called before the first frame update
     void Start()
@@ -74,21 +75,24 @@ public class FireExtinguisher : MonoBehaviour
 
         if (timeOnFire >= 120)
         {
-            if (onFire)
+            if (!done)
             {
                 foreach (ParticleSystem fireEffect in fireEffects)
                 {
                     fireEffect.Stop();
-                    if(boxCollider!= null)
-                    {
-                        Destroy(boxCollider);
-                    }
-                    GameManager.Instance.UpdateGameState(RiddlesProgress.FireEstinguished);
+                    
                 }
+                if (fireCollider != null)
+                {
+                    Destroy(fireCollider);
+                }
+                GameManager.Instance.UpdateGameState(RiddlesProgress.FireEstinguished);
 
                 onFire = false;
+                done = true;
+                timeOnFire = 0;
             }
-            timeOnFire = 0;
+           
 
         }
     }

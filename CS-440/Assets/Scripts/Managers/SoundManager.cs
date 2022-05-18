@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] riddlesClues;
     public AudioClip countdownClip;
     public AudioClip rocketClip;
+    public AudioClip capsuleClip;
     public AudioSource mainAudioSource;
     public AudioSource backgroundMusic;
 
@@ -48,6 +49,14 @@ public class SoundManager : MonoBehaviour
     {
         mainAudioSource.PlayOneShot(rocketClip);
         OVRHapticsClip takeOffClip = new OVRHapticsClip(rocketClip);
+        OVRHaptics.LeftChannel.Preempt(takeOffClip);
+        OVRHaptics.RightChannel.Preempt(takeOffClip);
+    }
+
+    public void playCapsuleClip()
+    {
+        mainAudioSource.PlayOneShot(capsuleClip);
+        OVRHapticsClip takeOffClip = new OVRHapticsClip(capsuleClip);
         OVRHaptics.LeftChannel.Preempt(takeOffClip);
         OVRHaptics.RightChannel.Preempt(takeOffClip);
     }

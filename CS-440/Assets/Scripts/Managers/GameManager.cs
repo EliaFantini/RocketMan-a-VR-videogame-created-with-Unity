@@ -66,6 +66,18 @@ public class GameManager : MonoBehaviour
     public void endGame()
     {
 
+        StartCoroutine(capsuleLaunch());
+    }
+
+    public IEnumerator capsuleLaunch()
+    {
+        AnimationManager.Instance.moveCapsuleWall();
+        SoundManager.Instance.playCapsuleClip();
+        yield return new WaitForSeconds(15);
+        AnimationManager.Instance.capsuleLaunchAnimation();
+        yield return new WaitForSeconds(5);
+        fadeScreen.fadeOut(changeScene, "MainMenu");
+
     }
 
 }

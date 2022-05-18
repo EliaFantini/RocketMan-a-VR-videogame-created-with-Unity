@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: rocketLaunched
+    m_ConditionEvent: capsuleLaunched
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -962750046701739105}
@@ -87,7 +87,7 @@ AnimatorController:
   m_Name: Speed
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: rocketLaunched
+  - m_Name: capsuleLaunched
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
