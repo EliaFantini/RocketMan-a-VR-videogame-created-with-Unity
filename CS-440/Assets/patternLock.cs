@@ -10,10 +10,12 @@ public class patternLock : MonoBehaviour
     public Material matZlock;
     public Material matlock;
     public Material greenExit;
+    public Material redWarn;
     public AudioSource audioSource;
     public AudioClip wallGoingDown;
     public GameObject slidingWall;
     private bool paintingPlaced = false;
+    public bool fireExtinguished = false;
 
 
     private int timeWindow;
@@ -32,6 +34,7 @@ public class patternLock : MonoBehaviour
             else if (!light.GetComponent<Light>().enabled)
                 gameObject.GetComponent<MeshRenderer>().material = matlock;
         }
+
     }
 
 
@@ -67,7 +70,7 @@ public class patternLock : MonoBehaviour
             }
 
         }
-        if (paintingPlaced)
+        if (paintingPlaced && fireExtinguished)
         {
             paintingPlaced = false;
             Vector3 finalSlidePosition = slidingWall.transform.position;
@@ -75,6 +78,10 @@ public class patternLock : MonoBehaviour
             StartCoroutine(slideWall(slidingWall, finalSlidePosition,1f));
             AudioSource.PlayClipAtPoint(wallGoingDown, slidingWall.transform.position);
             GameManager.Instance.UpdateGameState(RiddlesProgress.ExitPushed);
+        }
+        else if (paintingPlaced && !fireExtinguished)
+        {
+            StartCoroutine(redWarning());
         }
             
     }
@@ -101,6 +108,14 @@ public class patternLock : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         Destroy(objectToMove);
+    }
+
+    public IEnumerator redWarning()
+    {
+
+        gameObject.GetComponent<MeshRenderer>().material = redWarn;
+        yield return new WaitForSeconds(3);
+        gameObject.GetComponent<MeshRenderer>().material = greenExit;
     }
 
 }

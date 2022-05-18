@@ -24,7 +24,8 @@ public class screwDriving : MonoBehaviour
     {
         if(Drill.GetComponent<OVRGrabbable>().isGrabbed)
         {
-            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f){
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)> 0.5f || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f)
+            {
                 trigger = true;
             }
             else

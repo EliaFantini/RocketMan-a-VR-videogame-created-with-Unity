@@ -15,6 +15,7 @@ public class FireExtinguisher : MonoBehaviour
     public ParticleSystem[] fireEffects;
     public GameObject fireCollider;
     public AudioSource audio;
+    public patternLock patternLockScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class FireExtinguisher : MonoBehaviour
     {
         if (fireExtinguisher.GetComponent<OVRGrabbable>().isGrabbed )
         {
-            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5f )
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5f || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f)
             {
                 trigger = true;
             }
@@ -87,6 +88,7 @@ public class FireExtinguisher : MonoBehaviour
                     Destroy(fireCollider);
                 }
                 GameManager.Instance.UpdateGameState(RiddlesProgress.FireEstinguished);
+                patternLockScript.fireExtinguished = true;
 
                 onFire = false;
                 done = true;

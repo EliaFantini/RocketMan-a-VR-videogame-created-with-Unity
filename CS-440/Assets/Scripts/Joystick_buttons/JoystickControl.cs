@@ -37,6 +37,8 @@ public class JoystickControl : MonoBehaviour
             
         }
         buttonLamp.lightColor = ButtonLamp.eColor.Green;
+        GameManager.Instance.UpdateGameState(RiddlesProgress.RocketLaunched);
+
         done = true;
     }
 }

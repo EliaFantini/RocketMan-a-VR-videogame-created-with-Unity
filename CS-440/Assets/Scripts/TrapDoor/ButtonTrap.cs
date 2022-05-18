@@ -18,50 +18,65 @@ public class ButtonTrap : MonoBehaviour
     public Vector3 unpressedPos;
     public GameObject Door;
     public GameObject button;
-    public ButtonLamp buttonLamp;
     GameObject presser;
     AudioSource sound;
     public bool isPressed;
-    public bool enabled;
+    public bool enabled = false;
     public ButtonLamp lamp;
     public TrapDoorController trapDoorController;
 
     void Start()
     {
-        sound = GetComponent<AudioSource>();
+        sound = button.GetComponent<AudioSource>();
         isPressed = false;
         enabled = false;
 
         lamp = button.GetComponent<ButtonLamp>();
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(!isPressed && other.gameObject.tag == "buttonPresser") {
-            
+    private void Update()
+    {
+        
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if(!isPressed) {
+
             //button.transform.position = pressedPos;
-            StartCoroutine(MoveOverSpeed(button, pressedPos, 0.1f, true));
+            //StartCoroutine(MoveOverSpeed(button, pressedPos, 0.1f, true));
+            button.transform.position = pressedPos;
+            isPressed = true;
+
             presser = other.gameObject;
-            if (enabled )
+            if (enabled && other.gameObject.tag == "buttonPresser")
             {
                 trapDoorController.setIsOpen(true);
                 GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
             }
-            
+            else
+            {
+                // if the object is wrong, play a wrong effect sound
+                GetComponent<AudioSource>().Play();
+            }
+            //button pressed sound
             sound.Play();
-            
+
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if(isPressed && other.gameObject == presser) {
-            
+
             //button.transform.position = unpressedPos;
-            StartCoroutine(MoveOverSpeed(button, unpressedPos, 0.1f, false));
-            if (enabled)
+            //StartCoroutine(MoveOverSpeed(button, unpressedPos, 0.1f, false));
+            button.transform.position = unpressedPos;
+            isPressed = false;
+            if (enabled && other.gameObject.tag == "buttonPresser")
             {
                 trapDoorController.setIsOpen(false);
             }
-            
+            sound.Play();
+
         }
     }
 

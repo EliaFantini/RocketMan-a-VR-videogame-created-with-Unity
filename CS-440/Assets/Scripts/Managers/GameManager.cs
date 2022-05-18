@@ -65,8 +65,12 @@ public class GameManager : MonoBehaviour
 
     public void endGame()
     {
+        if (riddlesSolved[(int)RiddlesProgress.DoorCodeInserted])
+        {
+            StartCoroutine(capsuleLaunch());
+        }
 
-        StartCoroutine(capsuleLaunch());
+       
     }
 
     public IEnumerator capsuleLaunch()
