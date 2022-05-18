@@ -48,8 +48,12 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RocketLaunch()
     {
+        SoundManager.Instance.playCountdownClip();
+        yield return new WaitForSeconds(7);
+        SoundManager.Instance.playRocketClip();
+
         AnimationManager.Instance.rocketLaunchAnimation();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         fadeScreen.fadeOut(changeScene, "RocketInSpace");
 
     }

@@ -10,32 +10,29 @@ public class StartRocketChallenge : MonoBehaviour
 
     public ButtonLamp buttonLamp1;
     public ButtonLamp buttonLamp2;
-    public ButtonLamp tabletButtonLamp;
-
+    public bool done1 = false;
+    public bool done2 = false;
     public JoystickControl joystickControl;
     public ButtonLamp joystickActiveLight;
 
-    // Update is called once per frame
-    public ButtonLamp finalLamp;
     void Update()
     {   
         //when two first challenger are done activate the joystick
         if(buttonLamp2.on && buttonLamp2.lightColor == ButtonLamp.eColor.Green  
-        && tabletButtonLamp.on && tabletButtonLamp.lightColor == ButtonLamp.eColor.Green) {
+        && buttonLamp1.on && buttonLamp1.lightColor == ButtonLamp.eColor.Green && !done1) {
             joystickControl.canMove = true;
             joystickActiveLight.on = true;
-            joystickActiveLight.lightColor = ButtonLamp.eColor.Green;
+            joystickActiveLight.lightColor = ButtonLamp.eColor.Red;
+            done1 = true;
 
         }
         if(buttonLamp1.on && buttonLamp1.lightColor == ButtonLamp.eColor.Green 
-        && buttonLamp2.on && buttonLamp2.lightColor == ButtonLamp.eColor.Green 
-        && tabletButtonLamp.on && tabletButtonLamp.lightColor == ButtonLamp.eColor.Green) {
-            //start rocket
-            finalLamp.on = true;
+        && buttonLamp2.on && buttonLamp2.lightColor == ButtonLamp.eColor.Green
+        && joystickActiveLight.on && joystickActiveLight.lightColor == ButtonLamp.eColor.Green && !done2) 
+        {
+            done2 = true;
             GameManager.Instance.UpdateGameState(RiddlesProgress.RocketLaunched);
-        } else {
-            //Do nothing
-        }
+        } 
     }
 }
 

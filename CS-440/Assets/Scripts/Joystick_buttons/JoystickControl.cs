@@ -4,72 +4,39 @@ using UnityEngine;
 
 public class JoystickControl : MonoBehaviour
 {
-    public Transform topOfJoystick;
-
-    [SerializeField] //make private variables visible in the inspector
-    private float forwardBackwardTilt = 0;
-    [SerializeField]
-    private float sideToSideTilt = 0;
 
     public bool canMove = false;
+    private bool done=false;
+    private bool entered = false;
     public ButtonLamp buttonLamp;
-    // Update is called once per frame
-    void Update()
-    {   //get tilt forward or backwards
-        if (canMove) {
-            forwardBackwardTilt = topOfJoystick.rotation.eulerAngles.x;
-            if (forwardBackwardTilt < 355 && forwardBackwardTilt > 290)
-            {
-                forwardBackwardTilt = Mathf.Abs(forwardBackwardTilt - 360);
-                buttonLamp.on = true;
-                if (forwardBackwardTilt < 35 && forwardBackwardTilt > 20)
-                {
-                    buttonLamp.on = true;
-                }
-                else
-                {
-                    buttonLamp.on = false;
-                }
-                Debug.Log("Backward" + forwardBackwardTilt);
-            }
-            else if (forwardBackwardTilt > 5 && forwardBackwardTilt < 74)
-            {
-                Debug.Log("Forward" + forwardBackwardTilt);
-            }
-            //Get tilt side to side
-            sideToSideTilt = topOfJoystick.rotation.eulerAngles.z;
-            if (sideToSideTilt < 355 && sideToSideTilt > 290)
-            {
-                sideToSideTilt = Mathf.Abs(sideToSideTilt - 360);
-                Debug.Log("Right" + sideToSideTilt);
-            }
-            else if (sideToSideTilt > 5 && sideToSideTilt < 74)
-            {
-                Debug.Log("Left" + sideToSideTilt);
-            }
-        }
-        
+    public GameObject sphere;
+    public Quaternion finalRotation;
 
+    private void Update()
+    {
+        if(entered && !done)
+        {
+            StartCoroutine(leverUp(sphere, finalRotation, 1f));
+        }
     }
 
-    private void OnTriggerStay(Collider other) {
-        if (canMove)
+    private void OnTriggerEnter(Collider other) {
+        if (canMove && !done && other.gameObject.tag == "PlayerHand" )
         {
-            if (other.CompareTag("PlayerHand") && (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger) || OVRInput.Get(OVRInput.Button.SecondaryHandTrigger)))
-            {
-
-                Vector3 targetPostition = new Vector3(this.transform.position.x,
-                                    other.transform.position.y,
-                                    other.transform.position.z);
-                this.transform.LookAt(targetPostition);
-
-
-
-                //if use this istead the joystick rotates in all directions
-                //transform.LookAt(other.transform.position, transform.up);
-
-            }
+            entered = true;
         }
         
+    }
+
+    public IEnumerator leverUp(GameObject objectToMove, Quaternion end, float speed)
+    {
+        while (objectToMove.transform.rotation != end)
+        {
+            objectToMove.transform.rotation = Quaternion.Slerp(objectToMove.transform.rotation, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+            
+        }
+        buttonLamp.lightColor = ButtonLamp.eColor.Green;
+        done = true;
     }
 }

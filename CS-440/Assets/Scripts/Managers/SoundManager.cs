@@ -7,6 +7,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] 
     public AudioClip[] riddlesClues;
+    public AudioClip countdownClip;
+    public AudioClip rocketClip;
     public AudioSource mainAudioSource;
     public AudioSource backgroundMusic;
 
@@ -36,6 +38,18 @@ public class SoundManager : MonoBehaviour
         {
             backgroundMusic.mute = !backgroundMusic.mute;
         }
+    }
+
+    public void playCountdownClip()
+    {
+        mainAudioSource.PlayOneShot(countdownClip);
+    }
+    public void playRocketClip()
+    {
+        mainAudioSource.PlayOneShot(rocketClip);
+        OVRHapticsClip takeOffClip = new OVRHapticsClip(rocketClip);
+        OVRHaptics.LeftChannel.Preempt(takeOffClip);
+        OVRHaptics.RightChannel.Preempt(takeOffClip);
     }
 
     public void ChangeMasterVolume(float value)

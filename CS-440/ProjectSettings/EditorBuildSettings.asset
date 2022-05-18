@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Experiment2.unity
     guid: 5e6a499866865a641b6bb59519fbadee
+  - enabled: 1
+    path: Assets/Scenes/RocketInSpace.unity
+    guid: 909249d6bdc9a3548bf66ac8abbe24ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ef7497bde076bfa4db2647fa75f831dd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e38bf2dfff44e1342bba64f7fa54df97, type: 2}
