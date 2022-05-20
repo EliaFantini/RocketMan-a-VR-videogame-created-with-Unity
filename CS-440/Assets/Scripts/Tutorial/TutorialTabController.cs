@@ -5,20 +5,28 @@ using UnityEngine;
 public class TutorialTabController : MonoBehaviour
 {
     
-    // Start is called before the first frame update
-    private GameObject screen1;
-    private GameObject screen2;
-    private GameObject screen3;
-    private GameObject screen4;
+    private GameObject screen_displays;
+
+    private GameObject cur_screen;
+
+    public Keyboard_Tuto keyboard_Tuto;
+
+
+    private 
     void Start()
     {
-        screen1 = transform.GetChild(0).gameObject;
-        screen1.SetActive(true);
+        screen_displays = transform.GetChild(1).gameObject; //get gameObject containing display for screen
+        cur_screen = screen_displays.transform.GetChild(keyboard_Tuto.number).gameObject; //Get first display
+        cur_screen.SetActive(true); //display it
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //deactivate current display and activate display corresponding to tuto_Buttons.number
+        //(this number changes when you click on the arrows on the screen)
+        cur_screen.SetActive(false);
+        cur_screen = screen_displays.transform.GetChild(keyboard_Tuto.number).gameObject;
+        cur_screen.SetActive(true);
     }
 }
