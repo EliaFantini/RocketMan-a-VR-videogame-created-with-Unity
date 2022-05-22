@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35512224, g: 0.46264574, b: 0.49890855, a: 1}
+  m_IndirectSpecularColor: {r: 0.35512316, g: 0.4626049, b: 0.4989094, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22522,6 +22522,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1351510863}
     m_Modifications:
+    - target: {fileID: 3475981387888122498, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6921252250040517280, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -22530,9 +22534,38 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7236232195068154526, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195164876049, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195742792029, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195777544682, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7236232195777544683, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195877022685, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: 'Sometimes a rocket can be difficult to operate, if you find yourself
+        needing a helping hand. You may press the "Oculus Button" on your left hand
+        controller to get a audio hint on how to move forward. Press Y on your left
+        controller to mute the music, Y again to unmute it.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232196440903648, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236232196568295874, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
@@ -22585,6 +22618,10 @@ PrefabInstance:
     - target: {fileID: 7236232196582770608, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232196582770611, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7235c591437878e4a8394263d4459f79, type: 3}
