@@ -10669,7 +10669,7 @@ GameObject:
   - component: {fileID: 313368651}
   m_Layer: 11
   m_Name: Flashlight
-  m_TagString: DefaultDistanceGrabPosition
+  m_TagString: FlashLightSnappPose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50773,6 +50773,7 @@ MonoBehaviour:
   SnapPosition:
   - {fileID: 1293285939}
   - {fileID: 481551804}
+  - {fileID: 1439033729}
   GrabbedItem: {fileID: 0}
   LineRenderer: {fileID: 0}
 --- !u!114 &1027006429
@@ -61453,6 +61454,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 445366, guid: 339299a7e2fdedf47b7788ab1a25c9df, type: 3}
   m_PrefabInstance: {fileID: 1375669921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378204620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1378204621}
+  m_Layer: 6
+  m_Name: FlashLightSnappPoseLeftHand
+  m_TagString: FlashLightSnappPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1378204621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378204620}
+  m_LocalRotation: {x: 0.6019306, y: 0.37140426, z: 0.58931845, w: 0.39043838}
+  m_LocalPosition: {x: 0.016200066, y: -0.016000062, z: -0.0012998581}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174896385}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 1.85, y: 90.03, z: 114.8}
 --- !u!1001 &1380090598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63014,6 +63045,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1439033728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439033729}
+  m_Layer: 6
+  m_Name: FlashLightSnappPose
+  m_TagString: FlashLightSnappPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1439033729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439033728}
+  m_LocalRotation: {x: 0.6019306, y: 0.37140426, z: 0.58931845, w: 0.39043838}
+  m_LocalPosition: {x: 0.0162, y: -0.016, z: -0.0013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 671948833}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 1.85, y: 90.03, z: 114.8}
 --- !u!1 &1441505789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 163552, guid: 16ef0ee9e760e614f9acbcbf95b1489f, type: 3}

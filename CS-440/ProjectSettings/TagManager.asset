@@ -18,6 +18,7 @@ TagManager:
   - redTick
   - painting
   - DefaultDistanceGrabPosition
+  - FlashLightSnappPose
   layers:
   - Default
   - TransparentFX
