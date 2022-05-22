@@ -17941,10 +17941,10 @@ PrefabInstance:
     - target: {fileID: 2892028020425489598, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: positionMarker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1756384796}
     - target: {fileID: 2892028020425489598, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: excludeLayers.m_Bits
-      value: 1015
+      value: 4087
       objectReference: {fileID: 0}
     - target: {fileID: 3000540791161647061, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77586,6 +77586,11 @@ PrefabInstance:
     - {fileID: 13671688, guid: ded1d2e0d283d62428212702b4ed5f3f, type: 3}
     - {fileID: 11464152, guid: ded1d2e0d283d62428212702b4ed5f3f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ded1d2e0d283d62428212702b4ed5f3f, type: 3}
+--- !u!1 &1756384796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195790, guid: ded1d2e0d283d62428212702b4ed5f3f, type: 3}
+  m_PrefabInstance: {fileID: 1756384795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1756740928
 GameObject:
   m_ObjectHideFlags: 0

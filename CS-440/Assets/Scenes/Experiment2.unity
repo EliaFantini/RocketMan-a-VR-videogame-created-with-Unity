@@ -1302,7 +1302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24902067}
   m_LocalRotation: {x: 0, y: -0.09228373, z: 0, w: 0.9957327}
-  m_LocalPosition: {x: -1.7779998, y: -2.28, z: 2.97}
+  m_LocalPosition: {x: -1.746, y: -2.28, z: 2.782}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 111358623}
@@ -6882,6 +6882,22 @@ PrefabInstance:
     - target: {fileID: 448042, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569286, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4223028
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569286, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
+      propertyPath: m_Size.z
+      value: 0.180871
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569286, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
+      propertyPath: m_Center.x
+      value: 0.013630058
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569286, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
+      propertyPath: m_Center.z
+      value: 0.090436384
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82c3b8fcabff82d4787f83e992e386df, type: 3}
@@ -22523,15 +22539,46 @@ PrefabInstance:
     m_TransformParent: {fileID: 1351510863}
     m_Modifications:
     - target: {fileID: 3475981387888122498, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_Name
+      value: Grabbing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475981387888122498, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595497780060308018, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: 'You will need to interact with everything to get through this game.
+        The main interaction is the ability to grab objects!
+
+        To grab an
+        object you must squeeze the trigger to the side of the controller of the
+        corresponding hand you wish to grab with.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911967351953796528, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: Grabbing
       objectReference: {fileID: 0}
     - target: {fileID: 6921252250040517280, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7236232194661101885, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: Some items in this game can be used while grabbed. You can light up
+        a torch with "A" or "X" buttons, depending on your grabbing hand, or turn
+        on a drill or a fire extinguisher with the triggers on the back of the controllers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232194661101887, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7236232194665379762, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232194897460212, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236232195068154526, guid: 7235c591437878e4a8394263d4459f79, type: 3}
@@ -22542,9 +22589,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7236232195467784434, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195467784435, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: 'Objects can also be grabbed when they are out of reach.
+
+        By
+        pointing your hand in the direction of an objects a ray will appear on the
+        selected object.
+
+        You can then it grab as if your hand was placed
+        over it.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195490687859, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: Here you will learn the basic controls necessary to complete your mission
+        aboard this rocket. Please read carefully.
+      objectReference: {fileID: 0}
     - target: {fileID: 7236232195742792029, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195777544682, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_Name
+      value: DistanceGrabbing
       objectReference: {fileID: 0}
     - target: {fileID: 7236232195777544682, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_IsActive
@@ -22557,11 +22628,19 @@ PrefabInstance:
     - target: {fileID: 7236232195877022685, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_text
       value: 'Sometimes a rocket can be difficult to operate, if you find yourself
-        needing a helping hand. You may press the "Oculus Button" on your left hand
-        controller to get a audio hint on how to move forward. Press Y on your left
-        controller to mute the music, Y again to unmute it.
+        needing a helping hand, you may press the "Menu Button", below button "A"
+        or "X", depending on your Oculus version. It will give you an audio hint
+        on how to move forward. Press Y  to mute the music, Y again to unmute it.
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232196005592380, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: Distance Grabbing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232196266641855, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7236232196440903648, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_IsActive
@@ -22622,6 +22701,10 @@ PrefabInstance:
     - target: {fileID: 7236232196582770611, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619123700888053430, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7235c591437878e4a8394263d4459f79, type: 3}
@@ -50665,7 +50748,7 @@ PrefabInstance:
       objectReference: {fileID: 496813181}
     - target: {fileID: 2892028020425489598, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: excludeLayers.m_Bits
-      value: 1015
+      value: 4087
       objectReference: {fileID: 0}
     - target: {fileID: 3000540791161647061, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54864,7 +54947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101633750}
   m_LocalRotation: {x: 0, y: 0.026351383, z: 0, w: 0.99965274}
-  m_LocalPosition: {x: -1.745, y: -2.28, z: 2.998}
+  m_LocalPosition: {x: -1.749, y: -2.28, z: 2.827}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 87776904}
@@ -72143,7 +72226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729767772}
   m_LocalRotation: {x: 0, y: 0.026351383, z: 0, w: 0.99965274}
-  m_LocalPosition: {x: -1.728, y: -2.28, z: 2.884}
+  m_LocalPosition: {x: -1.728, y: -2.28, z: 2.752}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 771501141}
@@ -73604,7 +73687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756740928}
   m_LocalRotation: {x: 0, y: -0.012915078, z: 0, w: 0.9999167}
-  m_LocalPosition: {x: -1.722, y: -2.257, z: 2.873}
+  m_LocalPosition: {x: -1.719, y: -2.257, z: 2.75}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 493002884}
@@ -78577,7 +78660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920893936}
   m_LocalRotation: {x: 0, y: -0.31241778, z: 0, w: 0.9499448}
-  m_LocalPosition: {x: -1.739, y: -2.28, z: 2.992}
+  m_LocalPosition: {x: -1.712, y: -2.28, z: 2.796}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 21727187}
