@@ -17,6 +17,7 @@ TagManager:
   - uvLight
   - redTick
   - painting
+  - CubeSnapp
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - TypingHands
   - Keyboard
   - UVLight
-  - 
+  - Grabbable
   - 
   - 
   - 
