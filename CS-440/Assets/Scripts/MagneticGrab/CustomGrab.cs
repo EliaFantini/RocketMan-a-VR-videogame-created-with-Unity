@@ -23,6 +23,7 @@ public class CustomGrab : MonoBehaviour
 
     //Item to Interact with
     private GameObject ItemInFocus;
+    private Collider colliderHit;
     public GameObject GrabbedItem;
     private Rigidbody GrabbedItemRigidBody;
 
@@ -53,9 +54,7 @@ public class CustomGrab : MonoBehaviour
         if(OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, Controller) && ItemInHand == true) {
             ItemInHand = false;
             GrabbedItem.transform.parent = null;
-            GrabbedItemRigidBody = GrabbedItem.GetComponent<Rigidbody>();
-            GrabbedItemRigidBody.useGravity = true;;
-            GrabbedItemRigidBody.isKinematic = false;
+
             GrabbedItem = null;
         }
     }
@@ -65,19 +64,20 @@ public class CustomGrab : MonoBehaviour
         if(ItemInHand == false && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, Controller) && ItemInFocus != null && OtherHand.GrabbedItem != ItemInFocus) {
             GrabbedItem = ItemInFocus;
             ItemInHand = true;
+            gameObject.GetComponent<OVRGrabber>().GrabBeginFromDistance(GrabbedItem.GetComponent<OVRGrabbable>(), colliderHit);
             //Get snapp position and place
             //If the object has a tag correposing to one of the stored snap Positions, then
             //we grab the item and set it to the given snapp position
+            
             var snapp = SnapPosition.Where(x => x.CompareTag(GrabbedItem.tag)).FirstOrDefault();
             if(snapp != null) {
                 GrabbedItem.transform.parent = snapp.transform;
                 GrabbedItem.transform.position = snapp.position;
                 GrabbedItem.transform.rotation = snapp.rotation;
-                GrabbedItemRigidBody = GrabbedItem.GetComponent<Rigidbody>();
-                GrabbedItemRigidBody.useGravity = false;
-                GrabbedItemRigidBody.isKinematic = true;
                 LineRenderer.enabled = false;
             }
+            
+            LineRenderer.enabled = false;
         }
     }
 
@@ -95,6 +95,7 @@ public class CustomGrab : MonoBehaviour
                 RenderLine(RayCastPosition.transform.position, transform.TransformDirection(Vector3.forward), lineMaxLength);
                 if(ItemInFocus == null) {
                     ItemInFocus = hit.collider.gameObject;
+                    colliderHit = hit.collider;
                 }
             }
             else {

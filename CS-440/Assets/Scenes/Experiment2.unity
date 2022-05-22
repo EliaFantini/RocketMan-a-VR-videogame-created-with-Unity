@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35512224, g: 0.46264574, b: 0.49890855, a: 1}
+  m_IndirectSpecularColor: {r: 0.35512316, g: 0.4626049, b: 0.4989094, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 24902070}
   - component: {fileID: 24902069}
   - component: {fileID: 24902073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: Plug
   m_Icon: {fileID: 0}
@@ -6118,6 +6118,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: decorative_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 109742, guid: ce9f6338cd38cc242ae7ba54eb5ca686, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 109742, guid: ce9f6338cd38cc242ae7ba54eb5ca686, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 486698, guid: ce9f6338cd38cc242ae7ba54eb5ca686, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -10705,7 +10713,7 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints:
-  - {fileID: 0}
+  - {fileID: 313368651}
   grabSound: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
   grabReleaseSound: {fileID: 8300000, guid: 72e37686c6837804ab84e2f347c8e3ee, type: 3}
 --- !u!114 &313368644
@@ -22895,6 +22903,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wrench_Combination
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011891957680, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011891957680, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011122869336, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
       propertyPath: m_RootOrder
       value: 70
@@ -27356,7 +27372,7 @@ GameObject:
   - component: {fileID: 571648816}
   - component: {fileID: 571648818}
   - component: {fileID: 571648820}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: PowerSocket
   m_Icon: {fileID: 0}
@@ -27560,6 +27576,14 @@ PrefabInstance:
     - target: {fileID: 136706, guid: 01d0598bc959e1744a433317fbb1b0c7, type: 3}
       propertyPath: m_Name
       value: Box_01_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 136706, guid: 01d0598bc959e1744a433317fbb1b0c7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 136706, guid: 01d0598bc959e1744a433317fbb1b0c7, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 455826, guid: 01d0598bc959e1744a433317fbb1b0c7, type: 3}
       propertyPath: m_RootOrder
@@ -34879,6 +34903,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EAThe80_Prop_Book_01b_PRE (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7112537551421022455, guid: 87f2dceaf552fcd44baac28befb2a617, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112537551421022455, guid: 87f2dceaf552fcd44baac28befb2a617, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 7637858215818164813, guid: 87f2dceaf552fcd44baac28befb2a617, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -34923,7 +34955,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 390092059, guid: 87f2dceaf552fcd44baac28befb2a617, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87f2dceaf552fcd44baac28befb2a617, type: 3}
 --- !u!4 &645625064 stripped
 Transform:
@@ -41074,7 +41107,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1653265993, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
 --- !u!4 &702992466 stripped
 Transform:
@@ -41887,6 +41921,14 @@ PrefabInstance:
     - target: {fileID: 319589078133087701, guid: 5bce66f7433474e4ebaf06e4434835be, type: 3}
       propertyPath: m_Name
       value: pencil
+      objectReference: {fileID: 0}
+    - target: {fileID: 319589078133087701, guid: 5bce66f7433474e4ebaf06e4434835be, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 319589078133087701, guid: 5bce66f7433474e4ebaf06e4434835be, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 1091199587743942511, guid: 5bce66f7433474e4ebaf06e4434835be, type: 3}
       propertyPath: m_RootOrder
@@ -44142,6 +44184,14 @@ PrefabInstance:
     - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
       propertyPath: m_Name
       value: decorative_plant_desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 403136, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
       propertyPath: m_RootOrder
@@ -48354,6 +48404,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffie
       objectReference: {fileID: 0}
+    - target: {fileID: 4220918212240759249, guid: a53f591064baf7f4f85f4cd31ffe3d84, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220918212240759249, guid: a53f591064baf7f4f85f4cd31ffe3d84, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53f591064baf7f4f85f4cd31ffe3d84, type: 3}
 --- !u!64 &984264805 stripped
@@ -49001,6 +49059,14 @@ PrefabInstance:
     - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
       propertyPath: m_Name
       value: decorative_plant_desk (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 403136, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
       propertyPath: m_RootOrder
@@ -54405,7 +54471,7 @@ GameObject:
   - component: {fileID: 1101633753}
   - component: {fileID: 1101633752}
   - component: {fileID: 1101633756}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: Plug
   m_Icon: {fileID: 0}
@@ -59588,6 +59654,14 @@ PrefabInstance:
       value: chair
       objectReference: {fileID: 0}
     - target: {fileID: 5999845506303850339, guid: 3f036e691e664f447a90fa723afffeb0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999845506303850339, guid: 3f036e691e664f447a90fa723afffeb0, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999845506303850339, guid: 3f036e691e664f447a90fa723afffeb0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -61371,7 +61445,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1653265993, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
 --- !u!4 &1375051258 stripped
 Transform:
@@ -65244,6 +65319,14 @@ PrefabInstance:
     - target: {fileID: 5906738997392846620, guid: 74706bb29dd2f754f8d23c7af6e47e82, type: 3}
       propertyPath: m_Name
       value: pencilbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906738997392846620, guid: 74706bb29dd2f754f8d23c7af6e47e82, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906738997392846620, guid: 74706bb29dd2f754f8d23c7af6e47e82, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 6535606509160396198, guid: 74706bb29dd2f754f8d23c7af6e47e82, type: 3}
       propertyPath: m_RootOrder
@@ -70354,6 +70437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: decorative_plant_desk
       objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 403136, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -71483,7 +71574,7 @@ GameObject:
   - component: {fileID: 1729767775}
   - component: {fileID: 1729767774}
   - component: {fileID: 1729767778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: Plug
   m_Icon: {fileID: 0}
@@ -72944,7 +73035,7 @@ GameObject:
   - component: {fileID: 1756740931}
   - component: {fileID: 1756740930}
   - component: {fileID: 1756740934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: Plug
   m_Icon: {fileID: 0}
@@ -75350,6 +75441,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 1419340744493873780, guid: ec78088b7a0003d48ac6ee3afada669e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419340744493873780, guid: ec78088b7a0003d48ac6ee3afada669e, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 1799560027522719950, guid: ec78088b7a0003d48ac6ee3afada669e, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -76508,9 +76607,9 @@ GameObject:
   - component: {fileID: 1870431935}
   - component: {fileID: 1870431934}
   - component: {fileID: 1870431936}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ToolBox
-  m_TagString: Untagged
+  m_TagString: DefaultDistanceGrabPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77809,7 +77908,7 @@ GameObject:
   - component: {fileID: 1920893939}
   - component: {fileID: 1920893938}
   - component: {fileID: 1920893942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cable_end
   m_TagString: Plug
   m_Icon: {fileID: 0}
@@ -79087,6 +79186,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amp_Rack_02
       objectReference: {fileID: 0}
+    - target: {fileID: 127466, guid: 164922da0c45e13499cbb9c0d181acf4, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 127466, guid: 164922da0c45e13499cbb9c0d181acf4, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 417386, guid: 164922da0c45e13499cbb9c0d181acf4, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -79367,8 +79474,16 @@ PrefabInstance:
       value: Drill (1)
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 004a97f809c2c7c40b973eabe880a410, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 004a97f809c2c7c40b973eabe880a410, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 004a97f809c2c7c40b973eabe880a410, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 004a97f809c2c7c40b973eabe880a410, type: 3}
       propertyPath: m_RootOrder
@@ -84220,9 +84335,9 @@ GameObject:
   - component: {fileID: 4000012939837336}
   - component: {fileID: 1911602426}
   - component: {fileID: 1000012888320023}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hammer_01
-  m_TagString: Untagged
+  m_TagString: DefaultDistanceGrabPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
