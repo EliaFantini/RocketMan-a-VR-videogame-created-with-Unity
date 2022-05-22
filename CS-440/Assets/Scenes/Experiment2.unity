@@ -10667,9 +10667,9 @@ GameObject:
   - component: {fileID: 313368643}
   - component: {fileID: 313368650}
   - component: {fileID: 313368651}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flashlight
-  m_TagString: Untagged
+  m_TagString: DefaultDistanceGrabPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41023,11 +41023,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 793145457639874918, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3504426768938401524, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7359989827844306623, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
       propertyPath: m_RootOrder
@@ -41087,7 +41087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9059742446781606949, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ccc7105a505b5945a33b25e4abd8bd3, type: 3}
@@ -66179,7 +66179,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7662903328677458472, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
 --- !u!4 &1530869647 stripped
 Transform:
