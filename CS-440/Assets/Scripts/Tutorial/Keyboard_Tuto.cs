@@ -25,7 +25,7 @@ public class Keyboard_Tuto : MonoBehaviour
     IEnumerator waiter()
     {
         //Wait for 1 seconds
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2);
     }
     
 }
