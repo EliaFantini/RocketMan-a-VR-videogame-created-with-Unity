@@ -15757,7 +15757,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4b4ae590b1a940258067f0f0d045a47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c81326ef62be6450abefe864e123f52a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -78353,7 +78353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 11
-  fadeScreen: {fileID: 0}
+  fadeScreen: {fileID: 974889112}
 --- !u!1001 &1799821737
 PrefabInstance:
   m_ObjectHideFlags: 0
