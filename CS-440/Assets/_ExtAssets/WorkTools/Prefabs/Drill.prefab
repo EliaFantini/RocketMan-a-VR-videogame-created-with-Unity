@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000010846481362}
   - component: {fileID: 23000010513368042}
   - component: {fileID: 64000014196468632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +106,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011496336782}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Drill
-  m_TagString: Untagged
+  m_TagString: DefaultDistanceGrabPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 33000010514404660}
   - component: {fileID: 23000014003098424}
   - component: {fileID: 64000012630615122}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Top_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 33000012966789434}
   - component: {fileID: 23000012628893098}
   - component: {fileID: 64000013719604188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trigger_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}

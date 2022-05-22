@@ -28,8 +28,8 @@ public class CustomGrab : MonoBehaviour
 
     //LineRenderer
     public LineRenderer LineRenderer;
-    private float LineWidth = 0.03f;
-    private float lineMaxLength = 1000f;
+    private float LineWidth = 0.02f;
+    private float lineMaxLength = 100f;
     private Vector3[] InitLaserPositions;
 
 
@@ -61,10 +61,13 @@ public class CustomGrab : MonoBehaviour
     }
 
     private void GrabItem() {
+        //Grab item pointed at item if it is not already grabbed
         if(ItemInHand == false && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, Controller) && ItemInFocus != null && OtherHand.GrabbedItem != ItemInFocus) {
             GrabbedItem = ItemInFocus;
             ItemInHand = true;
             //Get snapp position and place
+            //If the object has a tag correposing to one of the stored snap Positions, then
+            //we grab the item and set it to the given snapp position
             var snapp = SnapPosition.Where(x => x.CompareTag(GrabbedItem.tag)).FirstOrDefault();
             if(snapp != null) {
                 GrabbedItem.transform.parent = snapp.transform;
@@ -83,7 +86,7 @@ public class CustomGrab : MonoBehaviour
             int layerMask = 1 << 11;
 
             RaycastHit hit;
-            //does any ray intersect any objects excluding the player layer
+            //Does ray intersect with any object in the "Grabbable" layer (layer 11)
             if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 2, layerMask)){
                 LineRenderer.enabled = true;
                 LineRenderer.SetPositions(InitLaserPositions);

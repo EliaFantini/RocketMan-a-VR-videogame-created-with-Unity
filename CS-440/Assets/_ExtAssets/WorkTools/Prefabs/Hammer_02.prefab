@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012657785910}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hammer_02
-  m_TagString: Untagged
+  m_TagString: DefaultDistanceGrabPosition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 33000010930469148}
   - component: {fileID: 23000011785037814}
   - component: {fileID: 64000013625896994}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hammer_02_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 33000012909813166}
   - component: {fileID: 23000011122202084}
   - component: {fileID: 64000012805145678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hammer_02_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
