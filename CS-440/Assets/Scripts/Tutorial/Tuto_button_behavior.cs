@@ -16,7 +16,7 @@ public class Tuto_button_behavior : MonoBehaviour
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
         if(buttonText.text.Length == 1) {
             NameToButtonText();
-            GetComponentInChildren<ButtonVR>().onPress.AddListener(
+            GetComponentInChildren<ButtonVR>().onRelease.AddListener(
                 delegate {keyboard.InsertChar(buttonText.text);}
             );
         }
