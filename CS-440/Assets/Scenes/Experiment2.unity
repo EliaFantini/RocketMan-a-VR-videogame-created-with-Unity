@@ -10662,7 +10662,6 @@ GameObject:
   - component: {fileID: 313368648}
   - component: {fileID: 313368647}
   - component: {fileID: 313368646}
-  - component: {fileID: 313368645}
   - component: {fileID: 313368644}
   - component: {fileID: 313368643}
   - component: {fileID: 313368650}
@@ -10706,7 +10705,7 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints:
-  - {fileID: 313368645}
+  - {fileID: 0}
   grabSound: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
   grabReleaseSound: {fileID: 8300000, guid: 72e37686c6837804ab84e2f347c8e3ee, type: 3}
 --- !u!114 &313368644
@@ -10723,20 +10722,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 958730315}
   audioSource: {fileID: 313368650}
---- !u!64 &313368645
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313368641}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 9a3b57f0a1248be419dd9c4d54748512, type: 3}
 --- !u!54 &313368646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10931,8 +10916,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.14696474, y: 0.23057185, z: 0.09560323}
-  m_Center: {x: -0.010522258, y: -0.0000009536948, z: -0.011224787}
+  m_Size: {x: 0.16075134, y: 0.23057185, z: 0.09560323}
+  m_Center: {x: -0.0036289669, y: -0.0000009537104, z: -0.011224787}
 --- !u!1 &314029732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 110680, guid: 7dd02c12b2c21ff49aa148934b3c1395, type: 3}
@@ -50794,6 +50779,7 @@ MonoBehaviour:
   SnapPosition:
   - {fileID: 302580876}
   - {fileID: 2102635705}
+  - {fileID: 1378204621}
   GrabbedItem: {fileID: 0}
   LineRenderer: {fileID: 0}
 --- !u!120 &1027006436
@@ -61478,7 +61464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378204620}
   m_LocalRotation: {x: 0.6019306, y: 0.37140426, z: 0.58931845, w: 0.39043838}
-  m_LocalPosition: {x: 0.016200066, y: -0.016000062, z: -0.0012998581}
+  m_LocalPosition: {x: -0.02, y: -0.027, z: 0.025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1174896385}
@@ -63055,7 +63041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1439033729}
   m_Layer: 6
-  m_Name: FlashLightSnappPose
+  m_Name: FlashLightSnappPoseRightHand
   m_TagString: FlashLightSnappPose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63069,7 +63055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439033728}
   m_LocalRotation: {x: 0.6019306, y: 0.37140426, z: 0.58931845, w: 0.39043838}
-  m_LocalPosition: {x: 0.0162, y: -0.016, z: -0.0013}
+  m_LocalPosition: {x: 0.016, y: -0.026, z: 0.021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 671948833}
