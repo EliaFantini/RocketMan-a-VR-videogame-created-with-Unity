@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b8ea4a0909584f440ae64afaa95f5677
   - enabled: 1
     path: Assets/Scenes/Experiment2.unity
     guid: 5e6a499866865a641b6bb59519fbadee
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RocketInSpace.unity
     guid: 47c5d1b0c2cdd204bb8d7571bae76eb1
   - enabled: 0
