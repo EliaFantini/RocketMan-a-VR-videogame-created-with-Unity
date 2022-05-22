@@ -7222,6 +7222,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3475981387888122498, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5990664769373796186, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195467784435, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_text
+      value: "You will need to interact with everything to get through this game.
+        The main interaction is the ability to grab objects!. \nTo grab an object
+        you must place your hand on the object and squeeze the trigger to the side
+        of the controller, for the corresponding hand."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232195777544682, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7236232196568295874, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -7269,6 +7288,14 @@ PrefabInstance:
     - target: {fileID: 7236232196568295876, guid: 7235c591437878e4a8394263d4459f79, type: 3}
       propertyPath: m_Name
       value: Tuto_Tablette
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236232196582770611, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619123700888053430, guid: 7235c591437878e4a8394263d4459f79, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 151
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7235c591437878e4a8394263d4459f79, type: 3}
