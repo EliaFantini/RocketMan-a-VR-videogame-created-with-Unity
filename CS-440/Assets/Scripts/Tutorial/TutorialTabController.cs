@@ -25,7 +25,7 @@ public class TutorialTabController : MonoBehaviour
     {
         //deactivate current display and activate display corresponding to tuto_Buttons.number
         //(this number changes when you click on the arrows on the screen)
-        if(keyboard_Tuto.cur_screen_number == 7) {
+        if(keyboard_Tuto.cur_screen_number == 8) {
             Destroy(this.gameObject);
         }
         cur_screen.SetActive(false);
