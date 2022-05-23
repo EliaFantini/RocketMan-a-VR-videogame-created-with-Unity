@@ -22,10 +22,10 @@ public class Hand : MonoBehaviour
       lastPosition = transform.position;
   }
   public void Update() {
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controller))
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, controller))
             GrabPoint();
 
-        if(OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, controller))
+        if(OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, controller))
             ReleasePoint();
 
   }

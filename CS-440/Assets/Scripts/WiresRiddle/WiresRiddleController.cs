@@ -11,6 +11,7 @@ public class WiresRiddleController : MonoBehaviour
     public GameObject[] correctPlugArr;
     public AttachWirePlug[] socketArr;
     public int correctlyPluggedCounter;
+    public AudioClip wrongSound;
 
     void Start()
     {
@@ -53,6 +54,34 @@ public class WiresRiddleController : MonoBehaviour
             addCorrectlyPlugged();
         }
         outletArr[outletId] = plug;
+        int i=0;
+        while (true)
+        {
+            if (outletArr[i] == null)
+            {
+                return;
+            }
+            if (i == 4)
+            {
+                break;
+            }
+            i++;        
+        }
+        i = 0;
+        while (true)
+        {
+            if (outletArr[i] != correctPlugArr[i])
+            {
+                AudioSource.PlayClipAtPoint(wrongSound, plug.transform.position);
+                return;
+            }
+            if (i == 4)
+            {
+                break;
+            }
+            i++;
+        }
+
     }
 
     public void unplugAll()

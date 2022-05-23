@@ -24,6 +24,7 @@ public class ButtonTrap : MonoBehaviour
     public bool enabled = false;
     public ButtonLamp lamp;
     public TrapDoorController trapDoorController;
+    public AudioClip unlockedSound;
 
     void Start()
     {
@@ -85,6 +86,13 @@ public class ButtonTrap : MonoBehaviour
         enabled = true;
         lamp.on = true;
         lamp.lightColor = ButtonLamp.eColor.Green;
+        AudioSource.PlayClipAtPoint(unlockedSound, transform.position);
+        if(isPressed && presser.tag == "buttonPresser")
+        {
+            trapDoorController.setIsOpen(true);
+            GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
+        }
+
     }
 
     

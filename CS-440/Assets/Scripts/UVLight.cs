@@ -15,7 +15,7 @@ public class UVLight : MonoBehaviour
 
     void Start()
     {
-        light.GetComponent<Light>().enabled = false;
+        light.GetComponent<Light>().enabled = true;
     }
 
     // Update is called once per frame
@@ -28,8 +28,9 @@ public class UVLight : MonoBehaviour
                 firstTimeGrabbed = false;
                 GameManager.Instance.UpdateGameState(RiddlesProgress.UVLightGrabbed);
             }
-            
+            /*
             grabber = gameObject.GetComponent<OVRGrabbable>().grabbedBy;
+            
             if (grabber.m_controller == OVRInput.Controller.LTouch && OVRInput.GetDown(OVRInput.RawButton.X))
             {
                 grabber.hapticPulse();
@@ -42,8 +43,9 @@ public class UVLight : MonoBehaviour
                 grabber.hapticPulse();
                 light.GetComponent<Light>().enabled = !light.GetComponent<Light>().enabled;
             }
+            */
 
-           
+
         }
     }
 }

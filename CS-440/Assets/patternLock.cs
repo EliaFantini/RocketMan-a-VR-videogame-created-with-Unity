@@ -40,14 +40,18 @@ public class patternLock : MonoBehaviour
 
     public void onCorrectPattern()
     {
-        
+        /*
         for (int i = 0; i < objectsGrabbable.Length; i++)
         {
             Vector3 grabbablePos = objectsNotGrabbable[i].transform.position;
             objectsNotGrabbable[i].transform.position = objectsGrabbable[i].transform.position;
             objectsGrabbable[i].transform.position = grabbablePos;
         }
-        
+        */
+        Vector3 grabbablePos = objectsNotGrabbable[0].transform.position;
+        objectsNotGrabbable[0].transform.position = objectsGrabbable[0].transform.position;
+        objectsGrabbable[0].transform.position = grabbablePos;
+
         /*
         Vector3 grabbablePos = objectsNotGrabbable[0].transform.position;
         objectsNotGrabbable[0].transform.position = objectsGrabbable[0].transform.position;

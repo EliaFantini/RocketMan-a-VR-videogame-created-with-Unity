@@ -6,25 +6,29 @@ public class toolBox : MonoBehaviour
 {
 
     [SerializeField]
-    public GameObject[] boxTools;
+    public List<GameObject> boxTools;
     public Vector3 boxBoundaries;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        foreach(GameObject tool in boxTools)
+        if(other.gameObject.GetComponent<OVRGrabbable>() != null && !boxTools.Contains(other.gameObject))
         {
-            if(tool.transform.parent != null && (Mathf.Abs(tool.transform.position.y- gameObject.transform.position.y) > boxBoundaries.y
-            || Mathf.Abs(tool.transform.position.x- gameObject.transform.position.x) > boxBoundaries.x
-            || Mathf.Abs(tool.transform.position.z- gameObject.transform.position.z) > boxBoundaries.z)){
-                tool.transform.parent = null;
+            boxTools.Add(other.gameObject);
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            other.gameObject.transform.parent = transform;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (boxTools.Contains(other.gameObject))
+        {
+            boxTools.Remove(other.gameObject);
+            if(other.gameObject.transform.parent == transform)
+            {
+                other.gameObject.transform.parent = null;
             }
+           
         }
     }
 }
