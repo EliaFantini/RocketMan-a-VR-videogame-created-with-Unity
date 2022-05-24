@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35512316, g: 0.4626049, b: 0.4989094, a: 1}
+  m_IndirectSpecularColor: {r: 0.35512224, g: 0.46264574, b: 0.49890855, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3566,6 +3566,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9069115365609054727, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
   m_PrefabInstance: {fileID: 102545601}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &102919195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102919196}
+  m_Layer: 0
+  m_Name: HammerSnapPosR
+  m_TagString: HammerSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &102919196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102919195}
+  m_LocalRotation: {x: -0.35216308, y: 0.35216308, z: 0.613173, w: 0.613173}
+  m_LocalPosition: {x: 0.029, y: 0.108, z: 0.045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 671948833}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -59.74, y: 0, z: 90}
 --- !u!1001 &107098782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10862,6 +10892,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6877482862484478235, guid: 05e9e47448795424c82917b515c7b876, type: 3}
   m_PrefabInstance: {fileID: 316885307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &318228923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318228924}
+  m_Layer: 0
+  m_Name: WrenchSnapPoseR
+  m_TagString: WrenchSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318228924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318228923}
+  m_LocalRotation: {x: -0.49803382, y: 0, z: 0, w: 0.86715764}
+  m_LocalPosition: {x: 0.04, y: -0.005, z: -0.017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 671948833}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -59.74, y: 0, z: 0}
 --- !u!1001 &321752528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23262,7 +23322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011891957680, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
       propertyPath: m_TagString
-      value: DefaultDistanceGrabPosition
+      value: WrenchSnapPose
       objectReference: {fileID: 0}
     - target: {fileID: 4000011122869336, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
       propertyPath: m_RootOrder
@@ -45945,6 +46005,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5f00f2f207c564089977c2b42a8986, type: 3}
+--- !u!1 &857511243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857511244}
+  m_Layer: 0
+  m_Name: TabletteSnapPositionR
+  m_TagString: TabletteSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857511244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857511243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0489, y: 0.09700003, z: -0.015000026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 671948833}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859168168
 GameObject:
   m_ObjectHideFlags: 0
@@ -47901,9 +47991,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wrench_Combination (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011891957680, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011891957680, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
+      propertyPath: m_TagString
+      value: DefaultDistanceGrabPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011122869336, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 4000011122869336, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48105,6 +48203,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 442080, guid: 16ef0ee9e760e614f9acbcbf95b1489f, type: 3}
   m_PrefabInstance: {fileID: 1889156507}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947097310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947097311}
+  m_Layer: 0
+  m_Name: WrenchSnapPoseL
+  m_TagString: WrenchSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &947097311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947097310}
+  m_LocalRotation: {x: 0, y: 0.49803382, z: 0.86715764, w: 0}
+  m_LocalPosition: {x: -0.0369, y: 0.0056, z: -0.0104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174896385}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -59.74, y: 0, z: 180}
 --- !u!1001 &948931343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49249,7 +49377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435255905258764165, guid: b7c323073beeb0b42a8412d881577235, type: 3}
       propertyPath: m_RootOrder
-      value: 70
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 1435255905258764165, guid: b7c323073beeb0b42a8412d881577235, type: 3}
       propertyPath: m_LocalScale.x
@@ -49309,7 +49437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774661282298506559, guid: b7c323073beeb0b42a8412d881577235, type: 3}
       propertyPath: m_TagString
-      value: DefaultDistanceGrabPosition
+      value: TabletteSnapPose
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c323073beeb0b42a8412d881577235, type: 3}
@@ -50877,7 +51005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3005534048702234662, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.315
+      value: 1.697
       objectReference: {fileID: 0}
     - target: {fileID: 3005534048702234662, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51223,6 +51351,9 @@ MonoBehaviour:
   - {fileID: 1293285939}
   - {fileID: 481551804}
   - {fileID: 1439033729}
+  - {fileID: 857511244}
+  - {fileID: 102919196}
+  - {fileID: 318228924}
   GrabbedItem: {fileID: 0}
   LineRenderer: {fileID: 0}
 --- !u!114 &1027006429
@@ -51244,6 +51375,9 @@ MonoBehaviour:
   - {fileID: 302580876}
   - {fileID: 2102635705}
   - {fileID: 1378204621}
+  - {fileID: 1992274861}
+  - {fileID: 1504201908}
+  - {fileID: 947097311}
   GrabbedItem: {fileID: 0}
   LineRenderer: {fileID: 0}
 --- !u!120 &1027006436
@@ -64384,8 +64518,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06207609, y: 0.025933327, z: 0.47267637}
-  m_Center: {x: 0.0017027111, y: -0.0019022784, z: 0.08206405}
+  m_Size: {x: 0.111605525, y: 0.10388824, z: 0.4726764}
+  m_Center: {x: -0.003041804, y: 0.0050610374, z: 0.08206329}
 --- !u!4 &1454557390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011122869336, guid: e2213544abe0a9548a2bf8428f0a1a78, type: 3}
@@ -65714,6 +65848,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400416, guid: 208ca54455d8ac34d8e8c32f367a245d, type: 3}
   m_PrefabInstance: {fileID: 880023207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1504201907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504201908}
+  m_Layer: 0
+  m_Name: HammerSnapPoseL
+  m_TagString: HammerSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1504201908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504201907}
+  m_LocalRotation: {x: -0.35216308, y: 0.35216308, z: 0.613173, w: 0.613173}
+  m_LocalPosition: {x: -0.0369, y: 0.106, z: 0.048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174896385}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -59.74, y: 0, z: 90}
 --- !u!1 &1504802634
 GameObject:
   m_ObjectHideFlags: 0
@@ -77190,7 +77354,7 @@ GameObject:
   - component: {fileID: 1860597948}
   m_Layer: 11
   m_Name: Hammer
-  m_TagString: DefaultDistanceGrabPosition
+  m_TagString: HammerSnapPose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77258,8 +77422,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10637757, y: 0.06332609, z: 1}
-  m_Center: {x: -0.007384452, y: 0.00795408, z: -5.844084e-18}
+  m_Size: {x: 0.15326428, y: 0.08404708, z: 1}
+  m_Center: {x: -0.014188238, y: -0.0024064188, z: -1.7464403e-17}
 --- !u!1001 &1860626202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80481,6 +80645,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 428934, guid: 040f36dc3eedcd241a0882592506236a, type: 3}
   m_PrefabInstance: {fileID: 237279860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1992274860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992274861}
+  m_Layer: 0
+  m_Name: TabletteSnapPositionL
+  m_TagString: TabletteSnapPose
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992274861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992274860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0375, y: 0.097, z: -0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174896385}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1997352949
 PrefabInstance:
   m_ObjectHideFlags: 0
