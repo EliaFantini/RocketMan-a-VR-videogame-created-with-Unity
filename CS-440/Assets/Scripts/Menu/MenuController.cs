@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour
 
     public void PlayButton()
     {
-        fadeScreen.fadeOut(changeScene, "Experiment2");
+        fadeScreen.fadeOut(changeScene, "Rocket");
         
     }
 

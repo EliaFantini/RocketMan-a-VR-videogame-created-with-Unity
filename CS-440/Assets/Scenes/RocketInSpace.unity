@@ -17949,6 +17949,58 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: a379cec2ba497874788d17eb312c61be, type: 2}
     - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 13300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime2
+      value: 49151
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.9194932
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key3.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.key4.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889591940944483848, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.39999962
       objectReference: {fileID: 0}
@@ -18600,7 +18652,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41f4b979c69e2ae4f9eeff0c58a7b18e, type: 2}
+  - {fileID: 2100000, guid: a379cec2ba497874788d17eb312c61be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18644,9 +18696,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.9194932, b: 1, a: 0}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -18661,16 +18713,16 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime1: 13300
+      atime2: 49151
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -18698,7 +18750,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41f4b979c69e2ae4f9eeff0c58a7b18e, type: 2}
+  - {fileID: 2100000, guid: a379cec2ba497874788d17eb312c61be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18742,9 +18794,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.9194932, b: 1, a: 0}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -18759,16 +18811,16 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime1: 13300
+      atime2: 49151
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -44491,7 +44543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774661282298506559, guid: b7c323073beeb0b42a8412d881577235, type: 3}
       propertyPath: m_TagString
-      value: DefaultDistanceGrabPosition
+      value: TabletteSnapPose
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c323073beeb0b42a8412d881577235, type: 3}

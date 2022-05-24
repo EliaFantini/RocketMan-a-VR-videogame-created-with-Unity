@@ -5,48 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b8ea4a0909584f440ae64afaa95f5677
   - enabled: 1
-    path: Assets/Scenes/Experiment2.unity
+    path: Assets/Scenes/Rocket.unity
     guid: 5e6a499866865a641b6bb59519fbadee
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RocketInSpace.unity
     guid: 47c5d1b0c2cdd204bb8d7571bae76eb1
-  - enabled: 0
-    path: Assets/Scenes/RocketEliaCopy.unity
-    guid: a11295a09d054084db3935983cfc2cb6
-  - enabled: 0
-    path: Assets/Scenes/Experiment2 - Copia.unity
-    guid: 0c581ee97c0809a4ebb55820356917c3
-  - enabled: 0
-    path: Assets/Scenes/Experiment.unity
-    guid: 6eb1daba61875ca4fb7aa2eefe7eff94
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Oculus/SampleFramework/Usage/CustomHands.unity
-    guid: a4f984fcee593d2418cc61f4a993d46d
-  - enabled: 0
-    path: Assets/Scenes/Button.unity
-    guid: f15d7bf4aa63f8745ac3a6f95623b6eb
-  - enabled: 0
-    path: Assets/Scenes/Room2AnimatedDoor.unity
-    guid: a7b7a0bbbbcf4d04cacc30590863c67d
-  - enabled: 0
-    path: Assets/Scenes/Climbing.unity
-    guid: 24737dd3b173955438ed28bbe57f4ca5
-  - enabled: 0
-    path: Assets/Scenes/RocketOlivier.unity
-    guid: 2b6299bd6e749a64cb8648b8434e8db6
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Oculus/VR/Scenes/DistanceGrab.unity
-    guid: 5999c654e59307942b0eb6946fcf8630
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ef7497bde076bfa4db2647fa75f831dd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e38bf2dfff44e1342bba64f7fa54df97, type: 2}

@@ -29,8 +29,8 @@ public class CustomGrab : MonoBehaviour
 
     //LineRenderer
     public LineRenderer LineRenderer;
-    private float LineWidth = 0.02f;
-    private float lineMaxLength = 100f;
+    private float LineWidth = 0.01f;
+    private float lineMaxLength = 200f;
     private Vector3[] InitLaserPositions;
 
 
