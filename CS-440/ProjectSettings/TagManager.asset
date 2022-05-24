@@ -19,6 +19,9 @@ TagManager:
   - painting
   - DefaultDistanceGrabPosition
   - FlashLightSnappPose
+  - TabletteSnapPose
+  - WrenchSnapPose
+  - HammerSnapPose
   layers:
   - Default
   - TransparentFX
