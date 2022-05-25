@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class for the fire extinguisher, checks if it is grabbed and if the index trigger is pressed
+/// Uses foam particles and particles trigger to extinguish the fire
+/// Stops the fire after some time of extinguishing
+/// </summary>
 public class FireExtinguisher : MonoBehaviour
 {
     private int timeOnFire = 0;
@@ -25,6 +30,7 @@ public class FireExtinguisher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Checks if grabbable for index trigger input
         if (fireExtinguisher.GetComponent<OVRGrabbable>().isGrabbed )
         {
             if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5f || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f)
@@ -42,7 +48,7 @@ public class FireExtinguisher : MonoBehaviour
         }
 
 
-        if (trigger)
+        if (trigger) // Start throwing out foam
         {
             foamEffect.Play();
             foamEffect.playbackSpeed= 10;
@@ -74,7 +80,8 @@ public class FireExtinguisher : MonoBehaviour
             foamEffect.Stop();
         }
 
-        if (timeOnFire >= 120)
+        
+        if (timeOnFire >= 120)//Extinguish fire
         {
             if (!done)
             {
@@ -99,6 +106,9 @@ public class FireExtinguisher : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Particles trigger to extinguish the fire
+    /// </summary>
     private void OnParticleTrigger()
     {
         if( foamEffect.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter) > 0)

@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
+/// <summary>
+/// Increment and decrement the number displayed on the tablet when the up and down arrows are pressed
+/// It receives 1 or 2 as argument which corresponds to the up and down arrows.
+/// </summary>
 public class TabletteThirdFloor : MonoBehaviour
 {
   
@@ -15,8 +20,7 @@ public class TabletteThirdFloor : MonoBehaviour
         else if(c == "2" && number > 0) { //decrement
             number = number -1;
         }
-        inputField.text = number.ToString();;
-        
+        inputField.text = number.ToString();;   
     }
 }
 

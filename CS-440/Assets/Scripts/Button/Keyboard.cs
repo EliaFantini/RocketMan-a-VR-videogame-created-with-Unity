@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
+/// <summary>
+/// Class for the keyboard, insert and delete char on the display
+/// </summary>
 public class Keyboard : MonoBehaviour
 {
     public TMP_InputField inputField;

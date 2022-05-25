@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// When the 2 screws are removed, changes the boolean of the animator to trigger a state change
+/// which opens the trap door
+/// </summary>
 public class PlateRemoval : MonoBehaviour
 {
     [SerializeField]

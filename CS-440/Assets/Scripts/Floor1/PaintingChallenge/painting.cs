@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class for the painting
+/// Takes cares of the detachment and placement of the painting
+/// </summary>
 public class painting : MonoBehaviour
 {
     [SerializeField]
@@ -13,10 +18,12 @@ public class painting : MonoBehaviour
     private bool done = false;
 
 
-
+    /// <summary>
+    /// Attach the frame to the screw
+    /// Force release it from the hand, placed it on the correct position and update the game state
+    /// </summary>
     public void frameAttached()
     {
-       
             if (GetComponent<OVRGrabbable>().isGrabbed)
             {
                 GetComponent<OVRGrabbable>().grabbedBy.ForceRelease(GetComponent<OVRGrabbable>());
@@ -32,10 +39,12 @@ public class painting : MonoBehaviour
 
             exitTablet.paintingPlacedCorrectly();
             GameManager.Instance.UpdateGameState(RiddlesProgress.FrameAttached);
-
-        
     }
 
+    /// <summary>
+    /// On collision, make the frame fall
+    /// </summary>
+    /// <param name="collision">Collision object</param>
     private void OnCollisionEnter(Collision collision)
     {
         if (!done)
@@ -48,6 +57,13 @@ public class painting : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Move the painting to the correct position
+    /// </summary>
+    /// <param name="objectToMove">The painting</param>
+    /// <param name="end">End position</param>
+    /// <param name="speed">Speed</param>
+    /// <returns></returns>
     public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
         while (objectToMove.transform.position != end)

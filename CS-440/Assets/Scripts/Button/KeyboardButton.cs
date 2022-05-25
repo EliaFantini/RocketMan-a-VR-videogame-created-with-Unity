@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class for the keyboard buttons
+/// Delegate the button listener to the keyboard class
+/// The name of the button correspond to the number, it is passed as an argument
+/// </summary>
 public class KeyboardButton : MonoBehaviour
 {
     Keyboard keyboard;
@@ -20,6 +25,7 @@ public class KeyboardButton : MonoBehaviour
         }
         
     }
+    
     public void NameToButtonText() {
         buttonText.text = gameObject.name;
     }

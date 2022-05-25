@@ -45,8 +45,6 @@ public class Button_2 : MonoBehaviour
             button.transform.position = new Vector3(button.transform.position.x, 
                                                     button.transform.position.y - buttonDownDistance,
                                                     button.transform.position.z);
-        
-
             if(on) {
                 buttonLamp.on = true;
             } else {
