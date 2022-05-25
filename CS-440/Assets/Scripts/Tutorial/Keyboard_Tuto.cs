@@ -8,7 +8,7 @@ public class Keyboard_Tuto : MonoBehaviour
     // Start is called before the first frame update
     public TMP_InputField inputField;
     public int cur_screen_number = 0;
-    public int number_of_screens = 7;
+    public int number_of_screens = 11;
 
     public void InsertChar(string c) {
         new WaitForSeconds(1);

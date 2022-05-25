@@ -20,6 +20,22 @@ public class TrapDoorController : MonoBehaviour
         anim = trapDoor.GetComponent<Animator>();
     }
 
+    public void trapDoorButtonPressed()
+    {
+        if (!isOpen)
+        {
+            isOpen = true;
+        }
+        else
+        {
+            isOpen = false;
+        }
+        sound.time = 1f;
+        sound.Play();
+        anim.SetBool("button_pressed", isOpen);
+    }
+
+
     /// <summary>
     /// Open or close the trap door
     /// </summary>
