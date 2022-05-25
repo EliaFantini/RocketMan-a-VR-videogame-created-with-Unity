@@ -26,18 +26,12 @@ public class wrench : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-
         if(onbolt && ! boltScrewed){
             float angle = transform.rotation.eulerAngles.y - prevRot;
             rb.transform.Rotate(0,0, angle, Space.Self);
             prevRot = transform.rotation.eulerAngles.y;
             
-        }
-        
-        
-        
+        }  
     }
 
     private void OnTriggerEnter(Collider other)

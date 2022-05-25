@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controller of the pattern lock, used for both the Z pattern riddle and the painting riddle
+/// </summary>
 public class patternLock : MonoBehaviour
 {
     [SerializeField]
@@ -17,69 +20,36 @@ public class patternLock : MonoBehaviour
     private bool paintingPlaced = false;
     public bool fireExtinguished = false;
 
-
-    private int timeWindow;
-
-    private bool open;
-
-    private GameObject light = null;
-
-    void Update()
-    {
-        if (light != null)
-        {
-            if (light.GetComponent<Light>().enabled)
-                gameObject.GetComponent<MeshRenderer>().material = matZlock;
-
-            else if (!light.GetComponent<Light>().enabled)
-                gameObject.GetComponent<MeshRenderer>().material = matlock;
-        }
-
-    }
-
-
+    /// <summary>
+    /// Play sound and make the tool box fall when the correct pattern is drawn
+    /// This is done by switching a non-grabbable, kinematic toolbox with a grabbable, non-kimematic one
+    /// </summary>
     public void onCorrectPattern()
     {
-        /*
-        for (int i = 0; i < objectsGrabbable.Length; i++)
-        {
-            Vector3 grabbablePos = objectsNotGrabbable[i].transform.position;
-            objectsNotGrabbable[i].transform.position = objectsGrabbable[i].transform.position;
-            objectsGrabbable[i].transform.position = grabbablePos;
-        }
-        */
         Vector3 grabbablePos = objectsNotGrabbable[0].transform.position;
         objectsNotGrabbable[0].transform.position = objectsGrabbable[0].transform.position;
         objectsGrabbable[0].transform.position = grabbablePos;
-
-        /*
-        Vector3 grabbablePos = objectsNotGrabbable[0].transform.position;
-        objectsNotGrabbable[0].transform.position = objectsGrabbable[0].transform.position;
-        objectsGrabbable[0].transform.position = grabbablePos;
-        */
-        /*
-        for (int i = 0; i < objectsGrabbable.Length; i++)
-        {
-            //objectsGrabbable[i].GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
-            objectsGrabbable[i].GetComponent<Rigidbody>().isKinematic = false;
-        }
-        */
         audioSource.Play();
         GameManager.Instance.UpdateGameState(RiddlesProgress.OpenBoxSign);
     }
 
+    /// <summary>
+    /// On trigger enter, check if it the light collider, if yes, changes the material to make the Z appear
+    /// </summary>
+    /// <param name="other">Other collider</param>
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "uvLight")
         {
-            light = other.gameObject;
             if (other.GetComponent<Light>().enabled)
             {
+                //Make the Z appear
                 gameObject.GetComponent<MeshRenderer>().material = matZlock;
             }
-
         }
+
         if (paintingPlaced && fireExtinguished)
         {
+            // Move slinding wall
             paintingPlaced = false;
             Vector3 finalSlidePosition = slidingWall.transform.position;
             finalSlidePosition.y = finalSlidePosition.y - 4f;
@@ -87,26 +57,41 @@ public class patternLock : MonoBehaviour
             AudioSource.PlayClipAtPoint(wallGoingDown, slidingWall.transform.position);
             GameManager.Instance.UpdateGameState(RiddlesProgress.ExitPushed);
         }
+
         else if (paintingPlaced && !fireExtinguished)
         {
+            // Display red warning to extinguish the fire
             StartCoroutine(redWarning());
         }
             
     }
     
+    /// <summary>
+    /// On trigger exit, changes the material if it was the light collider exiting
+    /// </summary>
+    /// <param name="other">Other collider</param>
     private void OnTriggerExit(Collider other) {
         if(other.tag == "uvLight"){
-            light = null;
             gameObject.GetComponent<MeshRenderer>().material = matlock;
         }
     }
 
+    /// <summary>
+    /// Change screen to green, called when the painting is placed correctly
+    /// </summary>
     public void paintingPlacedCorrectly()
     {
         paintingPlaced = true;
         gameObject.GetComponent<MeshRenderer>().material = greenExit;
     }
 
+    /// <summary>
+    /// Slide the wall down
+    /// </summary>
+    /// <param name="objectToMove">The wall</param>
+    /// <param name="end">End position of the wall</param>
+    /// <param name="speed">Speed of the movement</param>
+    /// <returns></returns>
     public IEnumerator slideWall(GameObject objectToMove, Vector3 end, float speed)
     {
         yield return new WaitForSeconds(1);
@@ -118,9 +103,12 @@ public class patternLock : MonoBehaviour
         Destroy(objectToMove);
     }
 
+    /// <summary>
+    /// Display red warning
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator redWarning()
     {
-
         gameObject.GetComponent<MeshRenderer>().material = redWarn;
         yield return new WaitForSeconds(3);
         gameObject.GetComponent<MeshRenderer>().material = greenExit;

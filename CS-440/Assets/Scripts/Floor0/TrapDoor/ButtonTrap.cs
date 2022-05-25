@@ -11,6 +11,9 @@ public enum eColor
     Blue,
 }
 
+/// <summary>
+/// Class attached to the button used to open the door, allows the button to be enabled and pressed to open the trap door
+/// </summary>
 public class ButtonTrap : MonoBehaviour
 {
     [SerializeField]
@@ -35,22 +38,21 @@ public class ButtonTrap : MonoBehaviour
         lamp = button.GetComponent<ButtonLamp>();
     }
 
-    private void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// If an object is colliding with the button, open the trap door if the object has the tag "buttonPresser"
+    /// </summary>
+    /// <param name="other">The object colliding</param>
     private void OnTriggerStay(Collider other) {
         if(!isPressed) {
 
-            //button.transform.position = pressedPos;
-            //StartCoroutine(MoveOverSpeed(button, pressedPos, 0.1f, true));
+            //Move the button downward to show that it is pressed
             button.transform.position = pressedPos;
             isPressed = true;
 
             presser = other.gameObject;
             if (enabled && other.gameObject.tag == "buttonPresser")
             {
+                // open the trap
                 trapDoorController.setIsOpen(true);
                 GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
             }
@@ -65,55 +67,42 @@ public class ButtonTrap : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// On trigger exit, close the trap door if it was previously opened (i.e. if the object has the tag "buttonPresser")
+    /// </summary>
+    /// <param name="other">The object leaving the collider</param>
     private void OnTriggerExit(Collider other) {
         if(isPressed && other.gameObject == presser) {
-
-            //button.transform.position = unpressedPos;
-            //StartCoroutine(MoveOverSpeed(button, unpressedPos, 0.1f, false));
+            //Move the button upward to show that he is unpressed
             button.transform.position = unpressedPos;
             isPressed = false;
             if (enabled && other.gameObject.tag == "buttonPresser")
             {
+                // Close the trap
                 trapDoorController.setIsOpen(false);
             }
             sound.Play();
-
         }
     }
 
+    /// <summary>
+    /// Enable the button when called and changes its color to green
+    /// If the button was already pressed by a button presser (the statue), it opens the trapdoor
+    /// </summary>
     public void enableButton()
     {
         enabled = true;
         lamp.on = true;
         lamp.lightColor = ButtonLamp.eColor.Green;
+        // Play unlocking sound
         AudioSource.PlayClipAtPoint(unlockedSound, transform.position);
+
         if(isPressed && presser.tag == "buttonPresser")
         {
+            // open the trap
             trapDoorController.setIsOpen(true);
             GameManager.Instance.UpdateGameState(RiddlesProgress.TrapDoorButton);
         }
-
     }
-
-    
-    public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed, bool isPressedd)
-    {
-        /*
-        while (objectToMove.transform.position != end)
-        {
-            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        
-           
-        }
-
-        */
-        
-        button.transform.position = end;
-        yield return new WaitForSeconds(0.5f);
-        isPressed = isPressedd;
-
-    }
-    
 }
 

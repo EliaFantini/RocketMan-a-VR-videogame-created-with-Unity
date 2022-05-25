@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class handling the plugging of the wires for both the wires riddles and the power socket, attached to the plugs
+/// </summary> 
 public class AttachWirePlug : MonoBehaviour
 {
     [SerializeField]
@@ -23,12 +26,18 @@ public class AttachWirePlug : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// On triggering of a collider, check if it is a wire and plug it in if so
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if (!isPlugged && (other.gameObject.tag == "Plug" || other.gameObject.tag == "PowerSocket"))
         {
 
             isPlugged = true;
+
+            // Force release the wire
             if (other.gameObject.GetComponent<OVRGrabbable>().isGrabbed)
             {
                 other.gameObject.GetComponent<OVRGrabbable>().grabbedBy.ForceRelease(other.gameObject.GetComponent<OVRGrabbable>());
@@ -37,25 +46,34 @@ public class AttachWirePlug : MonoBehaviour
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
+            // Move the wire into plugged position
             StartCoroutine(MoveOverSpeed(other.gameObject, pluggedPosition, 1f));
 
             other.transform.rotation = pluggedRotation;
             plug = other.gameObject;
             sound.Play();
 
+            // Turn on screen if the wire is the power cable of the computer
             if (other.gameObject.tag == "PowerSocket")
             {
                 controller.turnOnScreen();
             }
+
+            // Inform the controller of the wire riddles a wire has been plugged in
             if (other.gameObject.tag == "Plug")
             {
                 controller.plugged(other.gameObject, outletId);
             }
-
-
         }
     }
 
+    /// <summary>
+    /// Move the wire into plugging position
+    /// </summary>
+    /// <param name="objectToMove">Object to move, the wire</param>
+    /// <param name="end">Plugging position</param>
+    /// <param name="speed">Speed</param>
+    /// <returns></returns>
     public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
         while (objectToMove.transform.position != end)
@@ -65,13 +83,21 @@ public class AttachWirePlug : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detach the wires
+    /// </summary>
     public void detach()
     {
-
-        StartCoroutine(MoveBackOverSpeed(plug, initialPosition, 1f));
-        
+        StartCoroutine(MoveBackOverSpeed(plug, initialPosition, 1f));    
     }
 
+    /// <summary>
+    /// Used to detach the wires, move the wire back into initial position
+    /// </summary>
+    /// <param name="objectToMove">Object to move, the wires</param>
+    /// <param name="end">End position</param>
+    /// <param name="speed">Speed</param>
+    /// <returns></returns>
     public IEnumerator MoveBackOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
         while (objectToMove.transform.position != end)
