@@ -8455,7 +8455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d847d352bdca744193556c6dba5dc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchSound: {fileID: 8300000, guid: d7bdd9a52208337459d05d6c12c911e3, type: 3}
+  switchSound: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
   on: 0
   buttonLamp: {fileID: 0}
 --- !u!54 &306123520
@@ -25338,7 +25338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d847d352bdca744193556c6dba5dc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchSound: {fileID: 8300000, guid: d7bdd9a52208337459d05d6c12c911e3, type: 3}
+  switchSound: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
   on: 0
   buttonLamp: {fileID: 0}
 --- !u!54 &591905451
@@ -88922,6 +88922,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.377
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019638408416419, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019638408416421, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch2
@@ -88942,6 +88946,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.377
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019638909255013, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019638909255014, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch1
@@ -88950,6 +88958,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.009
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019639164156700, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019639164156702, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch3
@@ -88998,6 +89010,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019639237513475, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019639237513477, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch4

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public RiddlesProgress currentState;
     private bool[] riddlesSolved;
     public FadeScreen fadeScreen;
+    private bool gameEnded = false;
 
     private void Awake()
     {
@@ -65,8 +66,9 @@ public class GameManager : MonoBehaviour
 
     public void endGame()
     {
-        if (riddlesSolved[(int)RiddlesProgress.DoorCodeInserted])
+        if (riddlesSolved[(int)RiddlesProgress.DoorCodeInserted] && !gameEnded)
         {
+            gameEnded = true;
             StartCoroutine(capsuleLaunch());
         }
 

@@ -10529,7 +10529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d847d352bdca744193556c6dba5dc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchSound: {fileID: 8300000, guid: d7bdd9a52208337459d05d6c12c911e3, type: 3}
+  switchSound: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
   on: 0
   buttonLamp: {fileID: 0}
 --- !u!54 &306123520
@@ -33458,7 +33458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d847d352bdca744193556c6dba5dc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchSound: {fileID: 8300000, guid: d7bdd9a52208337459d05d6c12c911e3, type: 3}
+  switchSound: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
   on: 0
   buttonLamp: {fileID: 0}
 --- !u!54 &591905451
@@ -51696,7 +51696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3005534048702234662, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.899
+      value: 4.354
       objectReference: {fileID: 0}
     - target: {fileID: 3005534048702234662, guid: 04bb127dddc28ee459735bd2f9ffb936, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83569,6 +83569,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.377
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019638408416419, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019638408416421, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch2
@@ -83589,6 +83593,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.377
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019638909255013, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019638909255014, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch1
@@ -83597,6 +83605,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.009
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019639164156700, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019639164156702, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch3
@@ -83645,6 +83657,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2716019639237513475, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
+      propertyPath: switchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba9c29be35af21c44854f0235d5cca73, type: 3}
     - target: {fileID: 2716019639237513477, guid: c874e1d901987ff4489b2e4d2be86b9c, type: 3}
       propertyPath: m_Name
       value: Switch4
@@ -90915,7 +90931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7236232196242960011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.00895, y: 23.86, z: -4.111}
+  m_LocalPosition: {x: 22.00895, y: 23.86, z: -4.656}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 1774489328157594157}
