@@ -41,6 +41,7 @@ public class ButtonVR : MonoBehaviour
             sound.Play();
             isPressed = true;
         }
+        StartCoroutine(WaitAndTrigger()); //automatically release after 5 seconds
     }
 
     /// <summary>
@@ -51,9 +52,27 @@ public class ButtonVR : MonoBehaviour
     {
         if (other.gameObject == presser)
         {
+            StartCoroutine(WaitToAvoidDoubleClicks());
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
         }
     }
+
+
+
+    //Automatically release button after a few seconds to avoid glitch where buttons doesnt detect triggerExit
+    public IEnumerator WaitAndTrigger()
+    {
+        yield return new WaitForSeconds(5);
+        button.transform.localPosition = new Vector3(0, 0.015f, 0);
+        isPressed = false;
+    }
+
+     public IEnumerator WaitToAvoidDoubleClicks()
+    {
+        yield return new WaitForSeconds(2);
+       
+    }
+
 }
