@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Control the switches, attached to each one of them
+/// </summary>
 public class SwitchControl : MonoBehaviour
 {
     private AudioSource source;
@@ -19,19 +22,20 @@ public class SwitchControl : MonoBehaviour
 
     private Quaternion original_transform;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Set up switches
+    /// </summary>
     void Start()
     {   
         source = gameObject.AddComponent<AudioSource>();
         switchBase = transform.GetChild(0).gameObject; //get cylinder(switch base)
         original_transform = Quaternion.Euler(transform.eulerAngles.x,
                                                         transform.eulerAngles.y, transform.eulerAngles.z);
-        //turn off spotlight
-        //buttonLamp.on = false;
-        
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Change switches position when hit
+    /// </summary>
     void Update()
     {
         if(switchHit == true) {
@@ -48,13 +52,16 @@ public class SwitchControl : MonoBehaviour
                                                         transform.eulerAngles.y, transform.eulerAngles.z);
             } else {
                 
-                transform.rotation = original_transform;
-                                                        
-                                                        
+                transform.rotation = original_transform;                                                  
             }       
         }
     }
 
+    /// <summary>
+    /// Checks when the switch is hit, if it is hit by the hand change switchHit to true
+    /// There is a time window to avoid unwanted click
+    /// </summary>
+    /// <param name="other">Object colliding</param>
     private void OnTriggerEnter(Collider other) {
         //avoid unwanted clicks 
         if(other.CompareTag("PlayerHand") && canHitAgain < Time.time) {

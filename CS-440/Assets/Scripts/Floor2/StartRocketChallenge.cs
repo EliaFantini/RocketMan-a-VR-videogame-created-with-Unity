@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Class which continuously checks if all the riddles of the final floor has been complete and the activates the joystick
+/// Then when the joystick is moved, starts the rocket launching animation
+/// </summary>
 public class StartRocketChallenge : MonoBehaviour
 {
-    
-    //public SwitchControl switchControl;
-
     public ButtonLamp buttonLamp1;
     public ButtonLamp buttonLamp2;
     public bool done = false;
@@ -22,8 +22,6 @@ public class StartRocketChallenge : MonoBehaviour
             joystickControl.canMove = true;
             joystickActiveLight.on = true;
             joystickActiveLight.lightColor = ButtonLamp.eColor.Red;
-            
-
         }
         else if (!done)
         {

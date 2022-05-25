@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks if the corrects switch are on and off according to the combination on the wall
+/// When finished, light green lamp and update game state
+/// </summary>
 public class SwitchChallengeController : MonoBehaviour
 {
-    
-    //public SwitchControl switchControl;
-
     public SwitchControl switch1;
     public SwitchControl switch2;
     public SwitchControl switch3;
@@ -17,7 +18,7 @@ public class SwitchChallengeController : MonoBehaviour
 
     private bool riddleDone = false;
 
-    // Update is called once per frame
+
     void Update()
     {
         if(switch1.on == true && switch2.on == false &&
@@ -25,9 +26,7 @@ public class SwitchChallengeController : MonoBehaviour
             finalLamp.on = true;
             if (!riddleDone)
             {
-                riddleDone = true;
-
-                
+                riddleDone = true;       
                 GameManager.Instance.UpdateGameState(RiddlesProgress.SwitchesRiddle);
             }
             

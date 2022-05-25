@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controller for the numeric pad riddles
+/// Changes the color of the lamps according to the numbers
+/// When the riddles is complete, light on the green light and update the game state
+/// </summary>
 public class TabletteChallengeThirdFloorController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,8 +20,7 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
 
     public ButtonLamp finalLamp;
     private bool riddleDone = false;
-   
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +30,7 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
         b1.lightColor = ButtonLamp.eColor.Red;
         b2.lightColor = ButtonLamp.eColor.Red;
         b3.lightColor = ButtonLamp.eColor.Red;
-
+        // Changes colors
         switch(tab1.number)
         {
             case 1:
@@ -132,7 +136,7 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
 
         if (tab1.number == 9 && tab2.number == 3 && tab3.number == 5)
         {
-            
+            //Riddles complete, lit up the green light
             finalLamp.lightColor = ButtonLamp.eColor.Green;
             finalLamp.on = true;
             if (!riddleDone)
@@ -140,7 +144,6 @@ public class TabletteChallengeThirdFloorController : MonoBehaviour
                 riddleDone = true;
                 GameManager.Instance.UpdateGameState(RiddlesProgress.ThreeDigitsCode);
             }
-            
         }
         else
         {

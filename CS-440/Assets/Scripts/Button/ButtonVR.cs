@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// General class for buttons 
+/// </summary>
 public class ButtonVR : MonoBehaviour
 {
     public GameObject button;
@@ -23,6 +26,10 @@ public class ButtonVR : MonoBehaviour
         isPressed = false;
     }
 
+    /// <summary>
+    /// On trigger enter, change button's position, make sound and invoke onPress
+    /// </summary>
+    /// <param name="other">Object colliding</param>
     private void OnTriggerEnter(Collider other)
     {
         if (!isPressed)
@@ -36,24 +43,17 @@ public class ButtonVR : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// On trigger exit, invoke release and change the button's position
+    /// </summary>
+    /// <param name="other">Object colliding</param>
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == presser)
         {
-            //StartCoroutine(WaitAndTrigger());
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
         }
     }
-
-
-
-    /*
-    public IEnumerator WaitAndTrigger()
-    {
-        yield return new WaitForSeconds(2);
-        onRelease.Invoke();
-    }
-    */
 }

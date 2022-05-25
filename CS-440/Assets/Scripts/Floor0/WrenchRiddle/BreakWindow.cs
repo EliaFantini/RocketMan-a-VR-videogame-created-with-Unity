@@ -4,7 +4,8 @@ using UnityEngine;
 
 
 /// <summary>
-/// Break window on trigger of the hammer, unfreeze wrench and removes it from its slot
+/// Break window on collsiion with the hammer
+/// Unfreezes the wrench and removes it from its slot
 /// </summary>
 public class BreakWindow : MonoBehaviour {
     public GameObject glassPanel;
