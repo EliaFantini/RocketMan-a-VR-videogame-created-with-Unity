@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Animation manager
+/// </summary>
 public class AnimationManager : MonoBehaviour
 {
     public static AnimationManager Instance;
@@ -25,6 +28,9 @@ public class AnimationManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Start the rocket launching animation
+    /// </summary>
     public void rocketLaunchAnimation()
     {
         externalAnim.SetBool("rocketLaunched", true);
@@ -32,6 +38,9 @@ public class AnimationManager : MonoBehaviour
         speedEffectAnim.SetBool("rocketLaunched", true);
     }
 
+    /// <summary>
+    /// Start the capsule launching animation
+    /// </summary>
     public void capsuleLaunchAnimation()
     {
         
@@ -40,6 +49,10 @@ public class AnimationManager : MonoBehaviour
         planetAnim.SetBool("capsuleLaunched", true);
     }
 
+
+    /// <summary>
+    /// Move the wall of the capsule
+    /// </summary>
     public void moveCapsuleWall()
     {
         wall.transform.position = wallFinalPos;

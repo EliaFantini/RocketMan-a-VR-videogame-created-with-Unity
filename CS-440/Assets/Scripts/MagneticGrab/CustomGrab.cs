@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Class for the magnetic grab
+/// </summary>
 public class CustomGrab : MonoBehaviour
 {
     //Ray Cast Origin
@@ -50,6 +53,9 @@ public class CustomGrab : MonoBehaviour
         DropItem();
     }
 
+    /// <summary>
+    /// Drop item on release of the trigger
+    /// </summary>
     private void DropItem(){
         if(OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, Controller) && ItemInHand == true) {
             ItemInHand = false;
@@ -59,6 +65,9 @@ public class CustomGrab : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to grab an item with the magnetic grap
+    /// </summary>
     private void GrabItem() {
         //Grab item pointed at item if it is not already grabbed
         if(ItemInHand == false && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, Controller) && ItemInFocus != null && OtherHand.GrabbedItem != ItemInFocus) {
@@ -81,6 +90,9 @@ public class CustomGrab : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Compute target position, direction and length of the line, then render the line
+    /// </summary>
     private void RenderLine() {
         if(GrabbedItem == null) {
             int layerMask = 1 << 11;
@@ -104,7 +116,12 @@ public class CustomGrab : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Render the line
+    /// </summary>
+    /// <param name="targetPosition">Position of the target</param>
+    /// <param name="direction">Direction of the line</param>
+    /// <param name="length">Length of the line</param>
     void RenderLine(Vector3 targetPosition, Vector3 direction, float length){
         Ray ray = new Ray(targetPosition, direction);
         RaycastHit raycastHit;

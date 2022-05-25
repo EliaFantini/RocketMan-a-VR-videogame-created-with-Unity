@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sound manager
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -27,6 +30,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Play the hint for the riddles on trigger of Start button, mute music on trigger of the Y button
+    /// </summary>
     private void Update()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.Start))
@@ -41,10 +47,17 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Play the countdown for the rocket launch
+    /// </summary>
     public void playCountdownClip()
     {
         mainAudioSource.PlayOneShot(countdownClip, 0.2f);
     }
+
+    /// <summary>
+    /// Play the rocket clip
+    /// </summary>
     public void playRocketClip()
     {
         mainAudioSource.PlayOneShot(rocketClip, 0.2f);
@@ -53,6 +66,9 @@ public class SoundManager : MonoBehaviour
         OVRHaptics.RightChannel.Preempt(takeOffClip);
     }
 
+    /// <summary>
+    /// Play the capsule launching clip
+    /// </summary>
     public void playCapsuleClip()
     {
         mainAudioSource.PlayOneShot(capsuleClip, 0.7f);
@@ -61,6 +77,10 @@ public class SoundManager : MonoBehaviour
         OVRHaptics.RightChannel.Preempt(takeOffClip);
     }
 
+    /// <summary>
+    /// Change value
+    /// </summary>
+    /// <param name="value">Value of the volume</param>
     public void ChangeMasterVolume(float value)
     {
         AudioListener.volume = value;

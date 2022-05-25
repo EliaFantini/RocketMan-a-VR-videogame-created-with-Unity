@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class for the button of the tutorial
+/// Handles the previous and next page buttons of the tutorial
+/// </summary>
 public class Keyboard_Tuto : MonoBehaviour
 {
     // Start is called before the first frame update

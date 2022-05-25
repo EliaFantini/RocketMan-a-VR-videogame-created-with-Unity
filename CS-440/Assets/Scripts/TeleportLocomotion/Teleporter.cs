@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class which handles the teleport
+/// </summary>
 public class Teleporter : MonoBehaviour
 {
 
@@ -38,10 +41,6 @@ public class Teleporter : MonoBehaviour
     private Quaternion fixedRotation;
 
 
-
-
-
-
     private void Awake()
     {
         arcRenderer = GetComponent<LineRenderer>();
@@ -57,7 +56,9 @@ public class Teleporter : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Update the path for teleporting
+    /// </summary>
     private void UpdatePath()
     {
         groundDetected = false;
@@ -103,30 +104,28 @@ public class Teleporter : MonoBehaviour
         }
 
         // Update Line Renderer
-
         arcRenderer.positionCount = vertexList.Count;
         arcRenderer.SetPositions(vertexList.ToArray());
     }
 
+    /// <summary>
+    /// Update the player position
+    /// </summary>
     public void updateOVRPlayerPos()
     {
         player.GetComponent<CharacterController>().Move(eyeAnchor.transform.position - player.GetComponent<Transform>().position);
         eyeAnchor.transform.localPosition = new Vector3(0.0f, eyeAnchor.transform.localPosition.y, 0.0f);
-
     }
 
 
-    // Teleport target transform to ground position
+    /// <summary>
+    /// Teleport target transform to ground position
+    /// </summary>
     public void Teleport()
     {
         if (groundDetected)
         {
-            //fixedRotation = eyeAnchor.transform.rotation;
-
             player.GetComponent<CharacterController>().Move(positionMarker.transform.position - player.GetComponent<Transform>().position);
-            //OVRManager.display.RecenterPose();
-            //eyeAnchor.transform.rotation = fixedRotation;
-
         }
         else
         {
@@ -134,13 +133,14 @@ public class Teleporter : MonoBehaviour
         }
     }
 
-    // Active Teleporter Arc Path
+    /// <summary>
+    /// Active Teleporter Arc Path
+    /// </summary>
+    /// <param name="active">The boolean to activate the arc path</param>
     public void ToggleDisplay(bool active)
     {
         arcRenderer.enabled = active;
         positionMarker.SetActive(active);
         displayActive = active;
     }
-
-
 }

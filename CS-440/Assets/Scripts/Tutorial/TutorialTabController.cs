@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class for the tutorial tab
+/// </summary>
 public class TutorialTabController : MonoBehaviour
 {
-    
     private GameObject screen_displays;
 
     private GameObject cur_screen;
@@ -14,7 +16,6 @@ public class TutorialTabController : MonoBehaviour
     public Vector3 finalTabletPos;
     private int currNumber = 0;
     private bool numberChanged = false;
-
 
     private 
     void Start()
@@ -38,7 +39,6 @@ public class TutorialTabController : MonoBehaviour
             StartCoroutine(MoveOverSpeed(gameObject, finalTabletPos, 1f));
         }
         else if(numberChanged){
-
             cur_screen.SetActive(false);
             cur_screen = screen_displays.transform.GetChild(currNumber).gameObject;
             cur_screen.SetActive(true);
