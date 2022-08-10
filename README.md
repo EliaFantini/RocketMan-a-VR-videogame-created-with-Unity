@@ -20,6 +20,8 @@ through magnetic grabbing.
 
 The game was realized in the frame of the course [CS-444 Virtual Reality](https://edu.epfl.ch/coursebook/en/virtual-reality-CS-444) and it was awarded as the **best game of the course** for year 2021/2022. 
 
+<img align="center" width="auto" alt="Immagine 2022-08-10 175533" src="https://user-images.githubusercontent.com/62103572/183955610-5105b724-b564-479c-a8bd-f64a0933ed62.png">
+
 ## Authors
 - [Elia Fantini](https://github.com/EliaFantini)
 - [Olivier Lonneux](https://github.com/Olivier-Lonneux)
