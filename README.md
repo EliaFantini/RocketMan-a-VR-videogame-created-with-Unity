@@ -13,7 +13,7 @@
 </p>
 
 The Virtual Reality escape-room videogame **RocketMan**, realized for **Oculus Quest** (1 and 2), takes you into an
-apocalyptic world. The goal is to escape the earth thanks to a rocket that you will first need to repair
+apocalyptic world. The goal is to escape the Earth thanks to a rocket that you will first need to repair
 and set up through various riddles. You can move by walking, teleporting, or by using the joystick of the
 controllers. To solve the riddles, you have to use various tools that you can pick up using your hands or
 through magnetic grabbing.
@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/62103572/183925619-1bf638b2-4384-43f7-
 ```
 ├── CS-440                            # Folder containing all the Unity project files, to be opened by a Unity Editor
    ├── ...
-   ├── Assets                         # Main folder of the project, it contains all our code, assets, materials, sounds, scenes, videos and everything which was not automatically created by Unity
+   ├── Assets                         # Main folder of the project, it contains all our code, assets, prefabs, materials, sounds, scenes, videos and everything which was not automatically created by Unity
    ├── ...
 ├── report.pdf                        # The report of the project
 ├── VRProject_Guidelines_2022.pdf     # Pdf containing the project's guidelines and rules given by the course's professor
@@ -48,7 +48,7 @@ https://user-images.githubusercontent.com/62103572/183925619-1bf638b2-4384-43f7-
 ```
 
 
-## How top open up the project on Unity Editor
+## How to open up the project on Unity Editor
 This game was developed using **Unity Editor 2020.3.32f1**, we suggest you to download this version because different ones (especially older) might give problems.
 
 
