@@ -21,17 +21,16 @@ through magnetic grabbing.
 The game was realized in the frame of the course [CS-444 Virtual Reality](https://edu.epfl.ch/coursebook/en/virtual-reality-CS-444) and it was awarded as the **best game of the course** for year 2021/2022. 
 
 
-## Game Trailer
-The GIF and video that follow contain some gameplay scenes that might represent a **spoiler** of the solution of some riddles in the game. Be aware of this before watching them, if you want to play the game. Since GitHub doesn't let upload videos bigger than 10Mb, the video had to be compressed and the quality is much lower than the original :(.
+## Gameplay Trailer
+The GIF and video that follow contain some gameplay scenes that might represent a **spoiler** of the solution of some riddles in the game. Be aware of this before watching them, if you want to play the game. Since GitHub doesn't let upload videos bigger than 10Mb, the video had to be compressed and the quality is much lower than the original.  :(
 
-<video align="center" width="auto" controls>
-  <source src="https://user-images.githubusercontent.com/62103572/183925289-3ec28b90-ce7d-4e21-aac7-f8bab42bf705.mp4" type="video/mp4">
-</video>
 
+https://user-images.githubusercontent.com/62103572/183925619-1bf638b2-4384-43f7-94e9-44aaac373e29.mp4
 
 
 
-## Quick presentation 
+
+## Quick presentation slides
 <p align="center">
  <img width="auto" alt="RocketManGif" src="https://user-images.githubusercontent.com/62103572/183921705-d7e4aa2f-54de-4897-a907-c03d6069aba1.gif">
 </p>
