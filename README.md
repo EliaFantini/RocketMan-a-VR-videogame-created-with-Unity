@@ -97,7 +97,7 @@ slightly destabilized by the climbing.
 
 ## 🛠 Skills
 
-C#, Unity Engine, Oculus Framework, Blender. Game design, development of the game mechanics from scratch using only the Unity engine and the basic Oculus Framework for Virtual Reality interactions (the popular VRTK was not allowed, as it had most of the common vr-mechanics already coded), realisation of the whole game scenes from scratch, using Unity Store's assets but only of single objects, not whole scenes. Premiere Pro for the realisation of the gameplay trailer. Tons of debugging experience made through this project :). Playtesting. Manual realisation of small assets with Blender. 
+C#, Unity Engine, Oculus Framework, Blender, Photoshop, Adobe Premiere Pro. Game design, development of the game mechanics from scratch using only the Unity engine and the basic Oculus Framework for Virtual Reality interactions (the popular VRTK was not allowed, as it had most of the common vr-mechanics already coded), realisation of the whole game scenes from scratch, using Unity Store's assets but only of single objects, not whole scenes. Premiere Pro for the realisation of the gameplay trailer. Tons of debugging experience made through this project :). Playtesting. Manual realisation of small assets with Blender. Photoshop for the realisation of some game materials and for the game's logo.
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/EliaFantini/)
